@@ -1,0 +1,56 @@
+@import '@/assets/styles/_function.scss';
+.memoo_drawer{
+  background: #1F3B4F;
+  padding: 0;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0px -2px 70px 5px #00000080;
+  // border: 1px solid #07E993;
+  max-height: calc(100vh - formatPxToVw(80));
+
+  .ant-drawer,.ant-drawer-header{
+    background: #1F3B4F;
+    border: 1px solid #1F3B4F;
+    z-index: 9999999;
+  }
+  .ant-drawer-body{
+    background: #1F3B4F;
+    border: none;
+  }
+  .ant-drawer-title{
+    font-family: '404px';
+    font-size: formatPxToVw(14);
+    line-height: formatPxToVw(14);
+    background: linear-gradient(270deg, #14FCFB 0%, #07E993 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  }
+  .memoo_drawer_title{
+
+    background: linear-gradient(270deg, #14FCFB 0%, #07E993 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  }
+  .ant-drawer-close{
+    display: none;
+  }
+}
+@media (max-width: 750px) {
+  .ant-drawer-content-wrapper {
+    height: auto !important;
+    min-height: 220px;
+    overflow-y: auto;
+    .ant-drawer-content{
+      height: auto;
+      min-height: 100% !important;
+    }
+
+  }
+  .ant-drawer-body{
+    height: auto;
+    min-height: 220px !important;
+  }
+}

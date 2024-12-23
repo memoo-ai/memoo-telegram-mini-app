@@ -1,0 +1,7 @@
+
+@function formatPxToVw($px) {
+  $baseWidth: 360;
+  $result: math.div($px, $baseWidth) * 100;
+  $roundedResult: math.div(round($result * 100), 100);
+  @return #{$roundedResult}vw;
+}

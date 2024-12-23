@@ -1,0 +1,338 @@
+@import '@/assets/styles/_function.scss';
+.memoo_button {
+  border: unset;
+  border-radius: 7px;
+  background: #07e993;
+
+  color: #a005fe;
+  text-align: center;
+  font-family: '404px';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+
+  // span{
+  //   font-size: 16px;
+  //   line-height: 18px;
+  // }
+
+
+  &:hover {
+    background: #b53bff !important;
+    color: #19fda6 !important;
+  }
+
+  &.reverse {
+    background: #a005fe;
+    color: #07e993;
+    &:hover {
+      background: #19fda6 !important;
+      color: #b53bff !important;
+    }
+  }
+  &.join_disabled{
+    &:disabled {
+      background: #2C1844 !important;
+      color: #B53BFF !important;
+      border: 1px solid #B53BFF;
+      border-radius: 7px;
+      &:hover {
+        background-color: #2C1844 !important;
+        color: #B53BFF !important;
+      }
+    }
+  }
+  &:disabled {
+    background: #242842 !important;
+    color: #7d83b5 !important;
+    &:hover {
+      background-color: inherit;
+      color: #7d83b5 !important;
+      background: #242842 !important;
+    }
+  }
+}
+
+.memoo_button:disabled:hover {
+  background-color: inherit;
+}
+.memoo_button_mobile{
+  border: unset;
+  border-radius: 0;
+  background: #07e993;
+
+  color: #a005fe;
+  text-align: center;
+  font-family: '404px';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+
+  &:hover {
+    background: #b53bff !important;
+    color: #19fda6 !important;
+  }
+
+  &.reverse {
+    background: #a005fe;
+    color: #07e993;
+    &:hover {
+      background: #19fda6 !important;
+      color: #b53bff !important;
+    }
+  }
+  &.quick{
+    background: #3B2059;
+    color: #07e993;
+    border: 1px solid #B53BFF;
+    border-bottom-left-radius: 7px;
+    &:hover {
+      background: #19fda6 !important;
+      color: #B53BFF !important;
+      border: 1px solid #19fda6;
+    }
+
+    &:disabled {
+      background: #3B2059 !important;
+      color: #B53BFF !important;
+      border: 1px solid #B53BFF;
+      &:hover {
+        background-color: #3B2059;
+        color: #B53BFF !important;
+        border: 1px solid #B53BFF;
+      }
+    }
+  }
+
+  &:disabled {
+    background: #242842 !important;
+    color: #7d83b5 !important;
+    &:hover {
+      background-color: inherit;
+      color: #7d83b5 !important;
+    }
+  }
+}
+.memoo_button_card{
+  border: unset;
+  border-radius: 0;
+  background: #07e993;
+
+  color: #a005fe;
+  text-align: center;
+  font-family: '404px';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+
+  &:hover {
+    background: #b53bff !important;
+    color: #19fda6 !important;
+  }
+
+  &.reverse {
+    background: #a005fe;
+    color: #07e993;
+    &:hover {
+      background: #19fda6 !important;
+      color: #b53bff !important;
+    }
+  }
+
+  &:disabled {
+    background: #242842 !important;
+    color: #7d83b5 !important;
+    &:hover {
+      background-color: inherit;
+      color: #7d83b5 !important;
+    }
+  }
+}
+.memoo_button_dashboard_creator {
+  // border: unset;
+  border-radius: 0 0 15px 15px;
+  background: #1F3B4F;
+  border: 1px solid #07e993;
+  color: #07E993;
+  text-align: center;
+  font-family: '404px';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 31px; /* 125% */
+
+  // span{
+  //   font-size: 16px;
+  //   line-height: 18px;
+  // }
+
+
+  &:hover {
+    background: #19fda6 !important;
+    color: #1F3B4F !important;
+  }
+
+  &.reverse {
+    background: #a005fe;
+    color: #07e993;
+    &:hover {
+      background: #19fda6 !important;
+      color: #b53bff !important;
+    }
+  }
+  &.join_disabled{
+    &:disabled {
+      background: #2C1844 !important;
+      color: #B53BFF !important;
+      border: 1px solid #B53BFF;
+      border-radius: 7px;
+      &:hover {
+        background-color: #2C1844 !important;
+        color: #B53BFF !important;
+      }
+    }
+  }
+  &:disabled {
+    background: #242842 !important;
+    color: #7d83b5 !important;
+    &:hover {
+      background-color: inherit;
+      color: #7d83b5 !important;
+      background: #242842 !important;
+    }
+  }
+}
+.memoo_button_join_modal {
+  border: unset;
+  border-radius: 4px;
+  background: #07e993;
+
+  color: #1F3B4F;
+  text-align: center;
+  font-family: '404px';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+
+  // span{
+  //   font-size: 16px;
+  //   line-height: 18px;
+  // }
+
+
+  &:hover {
+    background: #b53bff !important;
+    color: #ffffff !important;
+  }
+
+  &.reverse {
+    background: #a005fe;
+    color: #07e993;
+    &:hover {
+      background: #19fda6 !important;
+      color: #b53bff !important;
+    }
+  }
+  &.join_disabled{
+    &:disabled {
+      background: #2C1844 !important;
+      color: #B53BFF !important;
+      border: 1px solid #B53BFF;
+      border-radius: 7px;
+      &:hover {
+        background-color: #2C1844 !important;
+        color: #B53BFF !important;
+      }
+    }
+  }
+  &:disabled {
+    background: #242842 !important;
+    color: #7d83b5 !important;
+    &:hover {
+      background-color: inherit;
+      color: #7d83b5 !important;
+      background: #242842 !important;
+    }
+  }
+}
+.memoo_button_quick_buy {
+  border: 1px solid #B53BFF;
+  // border-radius: 7px;
+  background: #3B2059;
+
+  color: #19FDA6;
+  text-align: center;
+  font-family: '404px';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+
+  // span{
+  //   font-size: 16px;
+  //   line-height: 18px;
+  // }
+
+
+  &:hover {
+    background: #07e993 !important;
+    color: #a005fe !important;
+  }
+
+  &:disabled {
+    background: #242842 !important;
+    color: #7d83b5 !important;
+    border: 1px solid #7D83B5;
+    &:hover {
+      background-color: inherit;
+      color: #7d83b5 !important;
+      background: #242842 !important;
+    }
+  }
+}
+.memoo_button_cancel {
+  border-radius: 7px;
+  background: #1F3B4F;
+  border: 1px solid #07e993;
+  color: #07E993;
+  text-align: center;
+  font-family: '404px';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 31px; /* 125% */
+
+  // span{
+  //   font-size: 16px;
+  //   line-height: 18px;
+  // }
+
+
+  &:hover {
+    color: #B53BFF !important;
+    border: 1px solid #B53BFF !important;
+    background: #1F3B4F !important;
+  }
+
+  &:disabled {
+    background: #242842 !important;
+    color: #7d83b5 !important;
+    &:hover {
+      background-color: inherit;
+      color: #7d83b5 !important;
+      background: #242842 !important;
+    }
+  }
+}
+@media not all and (min-width: 1024px) {
+  .memoo_button {
+    span{
+      font-size: formatPxToVw(12) !important;
+      line-height: formatPxToVw(12);
+    }
+  }
+}

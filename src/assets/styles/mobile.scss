@@ -1,0 +1,39 @@
+@import '@/assets/styles/_function.scss';
+.icon_collect_mobile{
+  width: formatPxToVw(16);
+  height: formatPxToVw(16);
+}
+.icon_topup_mobile{
+  width: formatPxToVw(20);
+  height: formatPxToVw(16.5);
+}
+.queue_mobile{
+  width: formatPxToVw(8);
+  height: formatPxToVw(8);
+}
+.memoo_icon_mobile{
+  width: formatPxToVw(30);
+  height: formatPxToVw(30);
+}
+.memoo_modal_button_mobile{
+  height: formatPxToVw(39);
+}
+
+
+@media (max-width: 767px) {
+  .ant-table-wrapper .ant-table-thead > tr > th{
+    font-size: 12px !important;
+    line-height: 16px !important;
+    text-align: left;
+  }
+  .ant-table-wrapper .ant-table-cell{
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .ant-table-wrapper .ant-table-tbody>tr>td{
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+  }
+
+}
