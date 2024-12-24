@@ -1,6 +1,6 @@
 @import url('@/assets/styles/button.scss');
 .landing-page{
-  background: url('@/assets/image/landing/bg-landing.png') no-repeat center center;
+  background: url('@/assets/images/landing/bg-landing.png') no-repeat center center;
   background-size: cover;
 }
 .memoo-baby{
@@ -57,12 +57,4 @@
     }
   }
 }
-.text-stroke{
-  // -webkit-text-stroke: 1px #000000;
-  // -webkit-text-fill-color: #ffffff;
-  text-shadow:
-    -1px -1px 0 black,
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
-}
+

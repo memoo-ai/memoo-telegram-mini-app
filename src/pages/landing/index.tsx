@@ -1,24 +1,24 @@
 import './index.scss';
 import { useNavigate } from 'react-router-dom';
 import ConnectWallet from '@/components/ConnectWallet';
-import memooTapIcon from '@/assets/image/landing/momoo_tap.svg';
-import babyMemoo from '@/assets/image/landing/baby_Memoo.png';
-import gold1 from '@/assets/image/landing/gold1.png';
-import gold2 from '@/assets/image/landing/gold2.png';
-import gold3 from '@/assets/image/landing/gold3.png';
-import gold4 from '@/assets/image/landing/gold4.png';
-import gold5 from '@/assets/image/landing/gold5.png';
-import memooPlay from '@/assets/image/landing/memoo_play_bg.png';
-import memooGo from '@/assets/image/landing/memoo_go_bg.png';
-import IconBrowser from '@/assets/image/landing/website.svg';
-import IconFriend from '@/assets/image/landing/communityicon.svg';
-import IconTwitter from '@/assets/image/landing/Twitter.svg';
-import MemooIcon from '@/assets/image/landing/memoo.png';
-import playIcon from '@/assets/image/landing/play.png';
-import goIcon from '@/assets/image/landing/go.png';
-import alerts from '@/assets/image/landing/bellicon.svg';
-import collabs from '@/assets/image/landing/collabicon.svg';
-import purpleBg from '@/assets/image/landing/bg-purple.svg';
+import memooTapIcon from '@/assets/images/landing/momoo_tap.svg';
+import babyMemoo from '@/assets/images/landing/baby_Memoo.png';
+import gold1 from '@/assets/images/landing/gold1.png';
+import gold2 from '@/assets/images/landing/gold2.png';
+import gold3 from '@/assets/images/landing/gold3.png';
+import gold4 from '@/assets/images/landing/gold4.png';
+import gold5 from '@/assets/images/landing/gold5.png';
+import memooPlay from '@/assets/images/landing/memoo_play_bg.png';
+import memooGo from '@/assets/images/landing/memoo_go_bg.png';
+import IconBrowser from '@/assets/images/landing/website.svg';
+import IconFriend from '@/assets/images/landing/communityicon.svg';
+import IconTwitter from '@/assets/images/landing/Twitter.svg';
+import MemooIcon from '@/assets/images/landing/memoo.png';
+import playIcon from '@/assets/images/landing/play.png';
+import goIcon from '@/assets/images/landing/go.png';
+import alerts from '@/assets/images/landing/bellicon.svg';
+import collabs from '@/assets/images/landing/collabicon.svg';
+import purpleBg from '@/assets/images/landing/bg-purple.svg';
 
 const homePath = import.meta.env.VITE_ROUTE_HOME;
 const earnPath = import.meta.env.VITE_ROUTE_HOME;
@@ -127,7 +127,7 @@ const Landing = () => {
           </div>
         ))}
 
-        <div onClick={() => navigate(homePath)}>memoo go</div>
+        {/* <div onClick={() => navigate(homePath)}>memoo go</div> */}
       </div>
     </div>
   );

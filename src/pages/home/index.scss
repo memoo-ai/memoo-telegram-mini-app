@@ -1,1 +1,19 @@
 @import url('@/assets/styles/button.scss');
+.home-banner{
+  background: url('@/assets/images/home/home-bg.png') no-repeat center center;
+  background-size: cover;
+}
+.home-title-wrapper{
+  background: url('@/assets/images/home/home-title-bg.png') no-repeat center center;
+  background-size: cover;
+}
+.home-title{
+  background: linear-gradient(180deg, #FFEE86 27.08%, #FFCB21 53.12%, #F58007 79.17%);
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.launch-app{
+  background: url('@/assets/images/home/launch-app-bg.png') no-repeat center center;
+  background-size: cover;
+}

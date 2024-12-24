@@ -126,3 +126,12 @@
 .page_container{
   padding: 0 16px;
 }
+.text-stroke{
+  // -webkit-text-stroke: 1px #000000;
+  // -webkit-text-fill-color: #ffffff;
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+}
