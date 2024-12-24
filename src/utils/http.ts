@@ -1,8 +1,8 @@
 /* eslint-disable no-debugger */
 import axios from 'axios';
 import { MEMOO_TOKEN_STORAGE } from '@/contracts';
-// import message from '@/components/IMessage';
-import { message } from 'antd';
+import message from '@/components/IMessage';
+// import { message } from 'antd';
 
 const http = axios.create({
   baseURL: import.meta.env.VITE_GO_NODE,

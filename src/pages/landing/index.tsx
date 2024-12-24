@@ -22,7 +22,7 @@ import purpleBg from '@/assets/images/landing/bg-purple.svg';
 
 const homePath = import.meta.env.VITE_ROUTE_HOME;
 const earnPath = import.meta.env.VITE_ROUTE_HOME;
-const mobileWebsite = import.meta.env.VITE_MOBILE_WEBSITE;
+const website = import.meta.env.VITE_WEBSITE;
 const twitterLink = import.meta.env.VITE_LINK_TWITTER;
 const Landing = () => {
   const navigate = useNavigate();
@@ -67,7 +67,7 @@ const Landing = () => {
           <div className="icon_before">
             <div
               className="flex pt-1 pl-1.5 bg-[#B53BFF] rounded-[7px] w-[34px] h-[31px] "
-              onClick={() => window.open(mobileWebsite)}
+              onClick={() => window.open(website)}
             >
               <img src={IconBrowser} alt="" />
             </div>

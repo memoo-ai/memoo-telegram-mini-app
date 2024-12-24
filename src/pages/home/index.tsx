@@ -14,6 +14,7 @@ import LaunchAppImg from '@/assets/images/home/launch-app.png';
 const memooGo = import.meta.env.VITE_ROUTE_GO;
 const airdropPath = import.meta.env.VITE_ROUTE_AIRDROP;
 const imoPath = import.meta.env.VITE_ROUTE_AIRDROP;
+const website = import.meta.env.VITE_WEBSITE;
 
 const Home = () => {
   const navigate = useNavigate();
@@ -66,7 +67,10 @@ const Home = () => {
             </div>
             <div>1</div>
           </div>
-          <div className="flex flex-col items-start justify-between p-4 gap-x-4 mt-1 launch-app w-full h-[110px] relative">
+          <div
+            className="flex flex-col items-start justify-between p-4 gap-x-4 mt-1 launch-app w-full h-[110px] relative"
+            onClick={() => window.open(website, '_blank')}
+          >
             <span className="font-404px whitespace-pre-wrap text-white text-stroke text-14-14">{`LAUNCH MEMOO APP\nfor FULL EXPERIENCE`}</span>
             <div className="button_after_reverse">
               <Button className="memoo_button  !rounded-[15px]  h-6 z-10">LAUNCH APP</Button>
