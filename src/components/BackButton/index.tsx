@@ -1,17 +1,18 @@
+import HoverImage from '../HoverImage';
 import './index.scss';
 import { useNavigate } from 'react-router-dom';
-
+import backIcon from '@/assets/images/back.svg';
 interface BackButtonProps {
   path?: string;
+  className?: string;
 }
 
-const BackPath = import.meta.env.VITE_ROUTE_DASHBOARD;
-const BackButton = ({ path = BackPath, ...rest }: BackButtonProps) => {
+const BackButton = ({ path, className, ...rest }: BackButtonProps) => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <img src="@/assets/image/back.svg" alt="" onClick={() => navigate(-1)} />
+    <div className={className} onClick={() => (path ? navigate(path) : navigate(-1))}>
+      <HoverImage imgUrl={backIcon} rootClassName="w-[42px] h-[40px]" showBg={false} />
     </div>
   );
 };

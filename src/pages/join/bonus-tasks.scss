@@ -1,0 +1,23 @@
+.points-btn{
+  width: 74px;
+  border: 1px solid #FFFFFF;
+  font-family: '404px';
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  text-align: center;
+  background: linear-gradient(90deg, #07E993 0%, #B53BFF 100%);
+  color: #FFFFFF;
+  border-radius: 4px;
+}
+.bonus{
+
+
+
+  &:hover{
+    .bonus-item{
+      background: #B53BFF;
+      border: 1px solid #2C1844;
+    }
+  }
+}

@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate, useMatches } from 'react-router-dom';
 import styles from './index.module.scss';
 import { useLogin } from '@/hooks/useLogin';
 import { MEMOO_TOKEN_STORAGE, SOL_DEMO_SPL_USDC } from '@/contracts';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { PublicKey } from '@solana/web3.js';
 import useStore from '@/store';
+import Tabbar from '@/components/TabBar';
+
+interface RouteHandle {
+  showTabBar?: boolean;
+}
 const BasicLayout: React.FC = () => {
   // const [connected, setConnected] = useState(false);
   const { loginMeme } = useLogin();
@@ -13,6 +18,7 @@ const BasicLayout: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { pubKey, setPubKey } = useStore();
+  const matches = useMatches();
 
   useEffect(() => {
     if (wallet && wallet.adapter && wallet.adapter.connected !== connected) {
@@ -40,11 +46,17 @@ const BasicLayout: React.FC = () => {
     }
   }, [connected, publicKey]);
 
+  const currentRoute = matches.find((match) => (match.handle as RouteHandle)?.showTabBar !== undefined);
+  const showTabBar = (currentRoute?.handle as RouteHandle)?.showTabBar ?? false;
+  console.log('currentRoute:', currentRoute);
+  console.log('location.pathname:', location.pathname);
+  console.log('showTabBar:', showTabBar);
   return (
     <div>
       <div className={styles.content}>
         <Outlet />
       </div>
+      {showTabBar && <Tabbar />}
     </div>
   );
 };

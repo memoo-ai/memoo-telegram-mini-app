@@ -35,8 +35,8 @@ export const getTelegramBind = () => {
 export const telegramBind = (params: TelegramBind) => {
   return http.post(`${prefix}/web-oriented/telegram-bind`, { ...params });
 };
-export const getUserTask = () => {
-  return http.get(`${prefix}/web-oriented/user-task`, {});
+export const getUserTask = (address: string) => {
+  return http.get(`${prefix}/web-unauthorized/user-task`, { params: { address } });
 };
 export const getUserReferral = () => {
   return http.get(`${prefix}/web-oriented/peferral`, {});

@@ -9,11 +9,15 @@ const ConnectWallet = () => {
   const [openWalletModal, setOpenWalletModal] = useState(false);
   const { address } = useAccount();
   return (
-    <div className="button_after">
+    <div className={`${address ? 'button_after_reverse' : 'button_after'}`}>
       <Button
-        className="font-404px memoo_button reverse !rounded-[15px]  h-6 z-10"
-        onClick={() => setOpenWalletModal(true)}
-        disabled={!!address}
+        className={`font-404px memoo_button ${!address && 'reverse'} !rounded-[15px]  h-6 z-10`}
+        onClick={() => {
+          if (!address) {
+            setOpenWalletModal(true);
+          }
+        }}
+        // disabled={!!address}
       >
         {address ? clipAddress(address?.toBase58()) : 'Connect Wallet'}
       </Button>

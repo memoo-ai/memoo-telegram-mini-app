@@ -19,6 +19,8 @@ import goIcon from '@/assets/images/landing/go.png';
 import alerts from '@/assets/images/landing/bellicon.svg';
 import collabs from '@/assets/images/landing/collabicon.svg';
 import purpleBg from '@/assets/images/landing/bg-purple.svg';
+import switchGame from '@/assets/images/switchGame.png';
+import HoverImage from '@/components/HoverImage';
 
 const homePath = import.meta.env.VITE_ROUTE_HOME;
 const earnPath = import.meta.env.VITE_ROUTE_HOME;
@@ -85,19 +87,18 @@ const Landing = () => {
           <img className="absolute top-[141px] -right-[29px]" src={gold5} alt="" />
         </div>
         <div className="absolute right-0 bottom-[36px] flex flex-col gap-y-2.5 w-12 h-[114px]">
-          <div className="relative w-12 h-12 flex items-end">
-            <img className="absolute" src={purpleBg} alt="" />
-            <img className="absolute" src={collabs} alt="" />
-            <span className="font-404px text-stroke text-10-10 z-10 text-white text-center w-full">COLLABS</span>
-          </div>
-          <div className="relative w-12 h-12 flex items-end">
-            <img className="absolute" src={purpleBg} alt="" />
-            <img className="absolute" src={alerts} alt="" />
+          <HoverImage imgUrl={collabs} text="COLLABS" />
+          <HoverImage imgUrl={alerts} text="ALERTS">
             <span className="absolute top-0 right-0 text-10-10 font-404px text-white flex items-center justify-center h-4 w-4 rounded-[50%] bg-[#F65845] border border-solid border-[#C13A2B]">
               {news > 9 ? '9+' : news}
             </span>
+          </HoverImage>
+          {/* <div className="relative w-12 h-12 flex items-end">
+            <img className="absolute" src={purpleBg} alt="" />
+            <img className="absolute" src={alerts} alt="" />
+
             <span className="font-404px text-stroke text-10-10 z-10 text-white text-center w-full">ALERTS</span>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4 w-full">

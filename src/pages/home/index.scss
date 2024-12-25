@@ -1,7 +1,7 @@
 @import url('@/assets/styles/button.scss');
 .home-banner{
   background: url('@/assets/images/home/home-bg.png') no-repeat center center;
-  background-size: cover;
+  background-size: cover 360px;
 }
 .home-title-wrapper{
   background: url('@/assets/images/home/home-title-bg.png') no-repeat center center;
@@ -17,3 +17,8 @@
   background: url('@/assets/images/home/launch-app-bg.png') no-repeat center center;
   background-size: cover;
 }
+.card-shadow{
+  box-shadow: 0px 0px 15px 0px #D38BFF;
+  border-radius: 15px;
+}
+
