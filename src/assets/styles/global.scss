@@ -139,5 +139,9 @@
   padding: 0 16px;
 }
 .page_tabbar{
-  padding-bottom: 72px;
+  padding-bottom: 88px;
+}
+.active-tab{
+  background: linear-gradient(180deg, #07E993 4%, #08B976 100%);
+  border: 1px solid #61FAC0;
 }

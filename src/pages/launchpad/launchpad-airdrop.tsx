@@ -14,7 +14,10 @@ import IProgress from '@/components/IProgress';
 import IPopover from '@/components/IPopover';
 import isMobile from 'is-mobile';
 import Tabbar from '@/components/TabBar';
-
+import StickyHeader from '@/components/StickyHeader';
+import AirdropImg from '@/assets/images/icons/icon-airdrop.svg';
+import Select from '@/components/Select';
+import { airdropSelectOptions } from '@/config';
 const LaunchPadAirdrop = () => {
   const navigate = useNavigate();
   const [activeKey, setActiveKey] = useState('');
@@ -60,7 +63,7 @@ const LaunchPadAirdrop = () => {
     } finally {
       setLoading(false);
     }
-  }, [address, refresh]);
+  }, [address, refresh, activeKey, orderBy]);
 
   useEffect(() => {
     fetchData();
@@ -76,6 +79,14 @@ const LaunchPadAirdrop = () => {
   return (
     <div>
       <Spin spinning={loading} fullscreen />
+      <StickyHeader text="Hunt AIRDROPS" imgSrc={AirdropImg}>
+        <Select
+          className="mt-1 mb-2"
+          options={airdropSelectOptions}
+          onChange={(e) => setActiveKey(e)}
+          defaultValue={airdropSelectOptions[0].key}
+        />
+      </StickyHeader>
       {data.length > 0 && (
         <div
           className={`grid grid-cols-2 gap-4 ${data.length > 0 ? 'mobile_page_padding' : 'm-0'} launchpad_content_mobile`}

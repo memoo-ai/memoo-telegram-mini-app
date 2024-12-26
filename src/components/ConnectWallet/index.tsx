@@ -9,7 +9,7 @@ const ConnectWallet = () => {
   const [openWalletModal, setOpenWalletModal] = useState(false);
   const { address } = useAccount();
   return (
-    <div className={`${address ? 'button_after_reverse' : 'button_after'}`}>
+    <div className={`${address ? 'button_after_reverse' : 'button_after'} w-max`}>
       <Button
         className={`font-404px memoo_button ${!address && 'reverse'} !rounded-[15px]  h-6 z-10`}
         onClick={() => {

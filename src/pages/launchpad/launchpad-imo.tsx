@@ -16,8 +16,11 @@ import IPopover from '@/components/IPopover';
 import Countdown from '@/components/Countdown';
 import IProgress from '@/components/IProgress';
 import Tabbar from '@/components/TabBar';
-const tokenSymbol = import.meta.env.VITE_TOKEN_SYMBOL;
+import StickyHeader from '@/components/StickyHeader';
+import ImoImg from '@/assets/images/icons/icon-imo.svg';
+import Select from '@/components/Select';
 
+const tokenSymbol = import.meta.env.VITE_TOKEN_SYMBOL;
 const LaunchPadImo = () => {
   const [activeKey, setActiveKey] = useState('');
   const [orderBy, setOrderBy] = useState('desc');
@@ -96,6 +99,14 @@ const LaunchPadImo = () => {
   return (
     <div>
       <Spin spinning={loading} fullscreen />
+      <StickyHeader text="DISCOVER IMO" imgSrc={ImoImg}>
+        <Select
+          className="mt-1 mb-2"
+          options={imoSelectOptions}
+          onChange={(e) => setActiveKey(e)}
+          defaultValue={imoSelectOptions[0].key}
+        />
+      </StickyHeader>
       {data.length > 0 && (
         <div className="grid grid-cols-2 gap-4 mobile_page_padding launchpad_content_mobile ">
           {data.map((item) => (

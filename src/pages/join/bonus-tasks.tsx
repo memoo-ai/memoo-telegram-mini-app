@@ -1,5 +1,6 @@
 import {
   IconBoost,
+  IconCompleted,
   IconDocs,
   IconInviteUser,
   IconRight,
@@ -14,6 +15,7 @@ import { useAccount } from '@/hooks/useWeb3';
 import { getUserTask } from '@/api/join';
 import TaskModal from './task-modal';
 import isMobile from 'is-mobile';
+import CompletedIcon from '@/assets/images/join/completed.svg';
 
 interface Task {
   manual: boolean;
@@ -279,11 +281,18 @@ const BonusTasks = () => {
                   }}
                 >
                   <div className="flex items-center gap-x-5">
-                    <div
-                      className={`w-8 h-8 max-lg:w-6 max-lg:h-6 max-lg:rounded-[4px] rounded-[7px] flex justify-center items-center border border-solid border-[#B53BFF] ${item?.taskFinish ? 'bg-[#B53BFF]' : 'bg-[#2C1844] bonus-item'}`}
-                    >
-                      {item?.taskFinish ? <IconRight className="z-10" color="#2C1844" /> : item.icon}
-                    </div>
+                    {item?.taskFinish ? (
+                      <div className="w-8 h-8 max-lg:w-6 max-lg:h-6 completed-icon rounded-[8px]">
+                        <img className="w-8 h-8 max-lg:w-6 max-lg:h-6 " src={CompletedIcon} />
+                        {/* <IconCompleted /> */}
+                      </div>
+                    ) : (
+                      <div
+                        className={`w-8 h-8 max-lg:w-6 max-lg:h-6 max-lg:rounded-[4px] rounded-[7px] flex justify-center items-center border border-solid border-[#B53BFF] ${item?.taskFinish ? 'bg-[#B53BFF]' : 'bg-[#2C1844] bonus-item'}`}
+                      >
+                        {item.icon}
+                      </div>
+                    )}
                     <span>
                       {`${index >= 9 ? '' : 0}${index + 1}`} / {item?.taskName}
                     </span>

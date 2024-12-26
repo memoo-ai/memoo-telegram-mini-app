@@ -35,7 +35,7 @@ const PageFixed = memo(({ children, top = 0, className, ...rest }: PageFixedProp
       if (!containerRef.current || initialPositionRef.current === null) return;
 
       const currentTop = containerRef.current.getBoundingClientRect().top;
-      const shouldBeFixed = currentTop <= top + 80;
+      const shouldBeFixed = currentTop <= top;
 
       if (shouldBeFixed !== isFixed) {
         setIsFixed(shouldBeFixed);

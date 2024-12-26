@@ -1,0 +1,29 @@
+.mine-icons{
+  background: linear-gradient(180deg, #341F4F 0%, #4C3B96 100%);
+  border: 1px solid #B53BFF;
+}
+.mine-reward-points{
+  background: linear-gradient(180deg, #341F4F 0%, #4C3B96 100%);
+  border: 1px solid #B53BFF;
+  border-radius: 15px;
+}
+.mine-reward-points-item{
+  // background: #FFFFFF80;
+  // background-blend-mode: overlay;
+  // backdrop-filter: blur(400px);
+  border: 1px solid #B53BFF;
+  border-radius: 7px;
+  padding: 13px 18px 13px 16px;
+}
+.mine-reward-points-title-bg{
+  background: url('@/assets/images/home/home-title-bg.png') no-repeat center center;
+  background-size: 100% 100%;
+
+}
+.mine-reward-points-title{
+  background: linear-gradient(180deg, #FFEE86 27.08%, #FFCB21 53.12%, #F58007 79.17%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}

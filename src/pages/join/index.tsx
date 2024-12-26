@@ -11,6 +11,8 @@ import PageFixed from '@/components/PageFixed';
 import { IconInviteUser, IconEarn, IconTasks, IconTrophy } from '@/components/icons';
 import { useSearchParams } from 'react-router-dom';
 import Tabbar from '@/components/TabBar';
+import StickyHeader from '@/components/StickyHeader';
+import JoinImg from '@/assets/images/icons/icon-join.svg';
 
 const joinUrl = import.meta.env.VITE_ROUTE_JOIN;
 const Join = () => {
@@ -56,8 +58,8 @@ const Join = () => {
           <div className="flex flex-col items-center gap-y-1.5 ">
             <IconInviteUser
               className="hidden max-lg:flex w-4 h-4"
-              color={activeKey === 'Referral' ? '#00C48C' : '#B53BFF'}
-              hoverColor={activeKey === 'Referral' ? '#00C48C' : '#B53BFF'}
+              color={activeKey === 'Referral' ? '#B53BFF' : '#00C48C'}
+              hoverColor={activeKey === 'Referral' ? '#B53BFF' : '#00C48C'}
             />
             <span className="max-lg:!text-10-8">Referral</span>
           </div>
@@ -70,8 +72,8 @@ const Join = () => {
           <div className="flex flex-col items-center gap-y-1.5 ">
             <IconTasks
               className="hidden max-lg:flex w-4 h-4"
-              color={activeKey === 'BonusTasks' ? '#00C48C' : '#B53BFF'}
-              hoverColor={activeKey === 'BonusTasks' ? '#00C48C' : '#B53BFF'}
+              color={activeKey === 'BonusTasks' ? '#B53BFF' : '#00C48C'}
+              hoverColor={activeKey === 'BonusTasks' ? '#B53BFF' : '#00C48C'}
             />
             <span className="max-lg:!text-10-8">Bonus Tasks</span>
           </div>
@@ -84,8 +86,8 @@ const Join = () => {
           <div className="flex flex-col items-center gap-y-1.5 ">
             <IconEarn
               className="hidden max-lg:flex w-4 h-4"
-              color={activeKey === 'HOW TO EARN' ? '#00C48C' : '#B53BFF'}
-              hoverColor={activeKey === 'HOW TO EARN' ? '#00C48C' : '#B53BFF'}
+              color={activeKey === 'HOW TO EARN' ? '#B53BFF' : '#00C48C'}
+              hoverColor={activeKey === 'HOW TO EARN' ? '#B53BFF' : '#00C48C'}
             />
             <span className="max-lg:!text-10-8">HOW TO EARN</span>
           </div>
@@ -98,8 +100,8 @@ const Join = () => {
           <div className="flex flex-col items-center gap-y-1.5 ">
             <IconTrophy
               className="hidden max-lg:flex w-4 h-4"
-              color={activeKey === 'Scoreboard' ? '#00C48C' : '#B53BFF'}
-              hoverColor={activeKey === 'Scoreboard' ? '#00C48C' : '#B53BFF'}
+              color={activeKey === 'Scoreboard' ? '#B53BFF' : '#00C48C'}
+              hoverColor={activeKey === 'Scoreboard' ? '#B53BFF' : '#00C48C'}
             />
             <span className="max-lg:!text-10-8">Scoreboard</span>
           </div>
@@ -153,15 +155,15 @@ const Join = () => {
   };
 
   return (
-    <div className="page_container page_tabbar">
+    <div className=" page_tabbar">
       <div className="w-full ">
-        <PageFixed top={0} className="w-full">
-          <div className="flex items-center justify-between h-[45px] bg-[#5E0198] ">
+        <StickyHeader text="EaRN Rewards" imgSrc={JoinImg}>
+          <div className="mb-2 flex items-center justify-between h-[46px] bg-[#5E0198] border border-solid border-[#c273f2] rounded-[10px] p-0.5 mt-0.5">
             {items.map((item: any) => {
               return (
                 <div
                   key={item.key}
-                  className={`font-404px text-14-14 ${activeKey === item.key ? 'text-green' : 'text-purple'}`}
+                  className={`font-404px text-14-14 h-full flex items-center justify-center flex-col px-2 ${activeKey === item.key ? 'active-tab text-purple rounded-[9px]' : ' text-green'}`}
                   onClick={() => onChange(item.key)}
                 >
                   {item.label}
@@ -169,8 +171,9 @@ const Join = () => {
               );
             })}
           </div>
-        </PageFixed>
-        <div className="w-full">
+        </StickyHeader>
+
+        <div className="w-full page_container relative">
           {items.map((item: any) => {
             return activeKey === item.key && item.children;
           })}

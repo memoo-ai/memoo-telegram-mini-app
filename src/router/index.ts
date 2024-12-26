@@ -7,6 +7,11 @@ const earn = import.meta.env.VITE_ROUTE_EARN;
 const airdrop = import.meta.env.VITE_ROUTE_AIRDROP;
 const imo = import.meta.env.VITE_ROUTE_IMO;
 const me = import.meta.env.VITE_ROUTE_ME;
+const credit = import.meta.env.VITE_ROUTE_RETURN;
+const collection = import.meta.env.VITE_ROUTE_ME;
+const alerts = import.meta.env.VITE_ROUTE_ME;
+const settings = import.meta.env.VITE_ROUTE_ME;
+const collaborations = import.meta.env.VITE_ROUTE_ME;
 
 const routeConfig: RouteObject[] = [
   {
@@ -42,6 +47,31 @@ const routeConfig: RouteObject[] = [
         path: me,
         Component: lazy(() => import('../pages/mine')),
         handle: { showTabBar: true },
+      },
+      {
+        path: credit,
+        Component: lazy(() => import('../pages/return')),
+        handle: { showTabBar: false },
+      },
+      {
+        path: collection,
+        Component: lazy(() => import('../pages/collection')),
+        handle: { showTabBar: false },
+      },
+      {
+        path: alerts,
+        Component: lazy(() => import('../pages/alerts')),
+        handle: { showTabBar: false },
+      },
+      {
+        path: settings,
+        Component: lazy(() => import('../pages/settings')),
+        handle: { showTabBar: false },
+      },
+      {
+        path: collaborations,
+        Component: lazy(() => import('../pages/collaborations')),
+        handle: { showTabBar: false },
       },
     ],
   },

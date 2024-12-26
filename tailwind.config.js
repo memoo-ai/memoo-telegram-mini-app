@@ -141,7 +141,12 @@ module.exports = {
               lineHeight: getResponsiveFontSize(13),
             },
         ],
-
+        '12-10': [
+          getResponsiveFontSize(12),
+            {
+              lineHeight: getResponsiveFontSize(10),
+            },
+        ],
         '12-12': [
           getResponsiveFontSize(12),
             {

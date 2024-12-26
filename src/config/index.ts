@@ -187,16 +187,8 @@ export const tokenSelectOptions = [
 
 export const imoSelectOptions = [
   {
-    key: 'NEWEST',
-    label: 'Newest',
-  },
-  {
-    key: 'TRENDING',
-    label: 'trending',
-  },
-  {
-    key: 'TIMEENDING',
-    label: 'Time Ending',
+    key: 'ENDSIN',
+    label: 'Ends In',
   },
   {
     key: 'MEMOOSCORE',
@@ -206,19 +198,11 @@ export const imoSelectOptions = [
     key: 'TOTALRAISED',
     label: 'TOTAL RAISED',
   },
-  // {
-  //   key: 'creatorRanking',
-  //   label: 'Creator Ranking',
-  // },
 ];
 export const airdropSelectOptions = [
   {
-    key: 'NEWEST',
-    label: 'Newest',
-  },
-  {
     key: 'IDODATE',
-    label: 'IMO Date',
+    label: 'DATE',
   },
   {
     key: 'MEMOOSCORE',
@@ -228,10 +212,16 @@ export const airdropSelectOptions = [
     key: 'PARTICIPANTS',
     label: 'PARTICIPANTS',
   },
-  // {
-  //   key: 'creatorRanking',
-  //   label: 'Creator Ranking',
-  // },
+];
+export const meSelectOptions = [
+  {
+    key: 'Coming soon',
+    label: 'Coming soon',
+  },
+  {
+    key: 'Memoo Go',
+    label: 'Memoo Go',
+  },
 ];
 
 export const increasedText = (value: number) => {

@@ -18,8 +18,6 @@ import playIcon from '@/assets/images/landing/play.png';
 import goIcon from '@/assets/images/landing/go.png';
 import alerts from '@/assets/images/landing/bellicon.svg';
 import collabs from '@/assets/images/landing/collabicon.svg';
-import purpleBg from '@/assets/images/landing/bg-purple.svg';
-import switchGame from '@/assets/images/switchGame.png';
 import HoverImage from '@/components/HoverImage';
 
 const homePath = import.meta.env.VITE_ROUTE_HOME;
