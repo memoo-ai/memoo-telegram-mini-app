@@ -16,6 +16,8 @@ import TaskImg from '@/assets/images/home/crownicon.svg';
 import BellImg from '@/assets/images/home/bellicon.svg';
 import NewsImg from '@/assets/images/home/news.svg';
 import EndsIn from '@/assets/images/home/endsin.svg';
+import { useEffect, useState } from 'react';
+import { getTrendingToken } from '@/api/token';
 
 const landingPath = import.meta.env.VITE_ROUTE_LANDING;
 const airdropPath = import.meta.env.VITE_ROUTE_AIRDROP;
@@ -24,6 +26,7 @@ const website = import.meta.env.VITE_WEBSITE;
 
 const Home = () => {
   const navigate = useNavigate();
+  const [trendToken, setTrendToken] = useState<any>({});
   const options = [
     {
       key: 'airdrop',
@@ -48,6 +51,14 @@ const Home = () => {
     image: AirdropImg,
     link: airdropPath,
   };
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await getTrendingToken();
+      setTrendToken(data?.[0]);
+    })();
+  }, []);
+
   return (
     <div className="flex flex-col page_tabbar">
       <div className="home-banner mt-2 page_container">
@@ -84,8 +95,8 @@ const Home = () => {
                     <span className="font-OCR text-lg leading-5 text-white">s</span>
                   </div>,
                 ]}
-                // instant={Number(timestamp) * 1000}
-                instant={1720510654000}
+                instant={Number(trendToken?.endsIn) * 1000}
+                // instant={1720510654000}
                 onEnded={(ended) => {
                   // setEnded(ended);
                 }}
@@ -93,7 +104,7 @@ const Home = () => {
               />
             </div>
             <div className="card-shadow">
-              <Card item={trending} timeType="Countdown" timestamp={trending.endsIn}>
+              <Card item={trendToken} timeType="Countdown" timestamp={trending.endsIn}>
                 <div className="flex items-center justify-center gap-x-2 text-10-10 text-purple">
                   TOKEN INFO
                   <IconArrow />

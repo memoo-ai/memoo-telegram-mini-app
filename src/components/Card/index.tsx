@@ -50,7 +50,8 @@ const Card: FC<CardProps> = ({
         <img
           // className="w-full min-h-[200px] rounded-tl-[15px] rounded-tr-[15px] border border-solid border-[#5D64A2] max-lg:border-l-0 max-lg:border-r-0 overflow-hidden max-lg:rounded-none max-lg:min-h-32"
           className="w-full h-[75px] rounded-tl-[15px] rounded-tr-[15px] border-b border-solid border-[#5D64A2] min-w-[196px]"
-          src={item?.banners?.[0] ?? DefaultBannerBg}
+          // src={item?.banners?.[0] ?? DefaultBannerBg}
+          src={item?.icon ?? DefaultBannerBg}
           onClick={() => {
             itemClick ? itemClick() : navigate(getActualPath('airdrop', { ticker: item.ticker }));
           }}
@@ -58,13 +59,13 @@ const Card: FC<CardProps> = ({
         <div className="absolute top-3 left-5">{statusLeft}</div>
         <div className="absolute top-3 right-5">{status}</div>
         <div className="absolute bottom-0 left-5 translate-y-1/2 flex items-end gap-x-2.5">
-          <img
+          {/* <img
             className="w-10 h-10 rounded-[50%] mr-2.5"
             src={item?.icon}
             onClick={() => {
               itemClick ? itemClick() : navigate(getActualPath('airdrop', { ticker: item.ticker }));
             }}
-          />
+          /> */}
           <div className="flex justify-between">
             <div className="flex gap-x-1 items-center">
               {showCollection && (

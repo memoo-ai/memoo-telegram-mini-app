@@ -106,7 +106,7 @@ const Mine = () => {
           defaultValue={meSelectOptions[1].key}
         />
       </StickyHeader>
-      <div className="mine-content page_container mt-[200px]">
+      <div className="mine-content page_container">
         <div className=" mine-icons w-full pt-3 px-4 pb-2 rounded-[15px] relative">
           <div className="flex items-center gap-x-4">
             <HoverImage imgUrl={SettingImg} showBg={false} />

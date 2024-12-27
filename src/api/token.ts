@@ -1,5 +1,5 @@
 import http from '@/utils/http';
-import { prefix } from '.';
+import { prefix, miniPrefix } from '.';
 import { ApiResponse } from './base';
 import { CustomAxiosRequestConfig } from '.';
 
@@ -163,4 +163,7 @@ export const twitterBind = (
     params,
     showCustomError,
   } as CustomAxiosRequestConfig);
+};
+export const getTrendingToken = () => {
+  return http.get(`${prefix}/web-unauthorized/ath-contribute-tiker`);
 };

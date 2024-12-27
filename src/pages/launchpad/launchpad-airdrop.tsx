@@ -88,9 +88,7 @@ const LaunchPadAirdrop = () => {
         />
       </StickyHeader>
       {data.length > 0 && (
-        <div
-          className={`grid grid-cols-2 gap-4 ${data.length > 0 ? 'mobile_page_padding' : 'm-0'} launchpad_content_mobile`}
-        >
+        <div className="grid grid-cols-2 gap-4 page_container launchpad_content_mobile">
           {data.map((item) => (
             <div key={item.ticker}>
               <MobileCard item={item}>

@@ -4,3 +4,4 @@ export interface CustomAxiosRequestConfig extends AxiosRequestConfig {
   showCustomError?: boolean;
 }
 export const prefix = '/backend/api/v1';
+export const miniPrefix = '/api/v1';
