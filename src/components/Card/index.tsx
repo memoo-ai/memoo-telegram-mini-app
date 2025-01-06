@@ -81,10 +81,10 @@ const Card: FC<CardProps> = ({
                 // </Wallet>
               )}
 
-              {Number(item.creatorTotalRaisedNumerator ?? 0) > 0 && (
+              {Number(item?.creatorTotalRaisedNumerator ?? 0) > 0 && (
                 <IPopover
                   trigger="hover"
-                  content={`${increasedText(formatRatioToPercentage(item.creatorTotalRaisedNumerator, item.creatorTotalRaisedDenominator))}`}
+                  content={`${increasedText(formatRatioToPercentage(item?.creatorTotalRaisedNumerator, item?.creatorTotalRaisedDenominator))}`}
                 >
                   <img className="w-7 h-6" src="/create/topupicon.png" />
                 </IPopover>
