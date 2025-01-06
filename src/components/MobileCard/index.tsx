@@ -30,7 +30,7 @@ const MobileCard: FC<MobileCardProps> = ({ children, item, triggerRefresh, type 
         className={`${isDraft ? '' : ''}`}
         src={item?.banners ? item.banners[0] : DefaultBannerBg}
         alt=""
-        onClick={() => (itemClick ? itemClick() : navigate(getActualPath('airdrop', { ticker: item.ticker })))}
+        onClick={() => (itemClick ? itemClick() : navigate(getActualPath('airdrop', { ticker: item?.ticker })))}
       />
       <div className={`flex  justify-between ${type === 'mine' ? 'items-start' : 'items-center'}`}>
         <div className="px-2">
@@ -39,9 +39,9 @@ const MobileCard: FC<MobileCardProps> = ({ children, item, triggerRefresh, type 
         <div>{header}</div>
       </div>
       <h5 className="font-OCR text-11-13 text-[#fff] px-2 w-full whitespace-nowrap overflow-hidden text-ellipsis">
-        {item.tokenName}
+        {item?.tokenName}
       </h5>
-      <h5 className="font-OCR text-9-13 text-green px-2">{item.ticker}</h5>
+      <h5 className="font-OCR text-9-13 text-green px-2">{item?.ticker}</h5>
       <div className="min-h-20">{content}</div>
     </div>
   );

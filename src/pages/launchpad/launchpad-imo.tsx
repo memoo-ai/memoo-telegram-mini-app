@@ -103,14 +103,14 @@ const LaunchPadImo = () => {
       {data.length > 0 && (
         <div className="grid grid-cols-2 gap-4 page_container launchpad_content_mobile ">
           {data.map((item) => (
-            <div key={item.ticker}>
+            <div key={item?.ticker}>
               <MobileCard item={item}>
                 <div className="mr-2">
                   <div className="flex gap-x-[12px] h-full">
-                    {Number(item.creatorTotalRaisedNumerator ?? 0) > 0 && (
+                    {Number(item?.creatorTotalRaisedNumerator ?? 0) > 0 && (
                       <IPopover
                         trigger="hover"
-                        content={`${increasedText(formatRatioToPercentage(item.creatorTotalRaisedNumerator, item.creatorTotalRaisedDenominator))}`}
+                        content={`${increasedText(formatRatioToPercentage(item?.creatorTotalRaisedNumerator, item.creatorTotalRaisedDenominator))}`}
                       >
                         <img className="icon_topup_mobile" src="/create/topupicon.png" />
                       </IPopover>
@@ -155,11 +155,11 @@ const LaunchPadImo = () => {
                     </div>
                     <div className="flex flex-col w-[50%] h-max items-end gap-y-1">
                       <p className="font-OCR text-white text-9-10">
-                        {formatRatioToPercentage(item.memooScore, item.totalScore)}/100
+                        {formatRatioToPercentage(item?.memooScore, item?.totalScore)}/100
                       </p>
                       <IProgress
                         className="w-[60%] h-1 -mt-1"
-                        percent={formatRatioToPercentage(item.memooScore, item.totalScore)}
+                        percent={formatRatioToPercentage(item?.memooScore, item?.totalScore)}
                       />
                     </div>
                   </div>
@@ -170,11 +170,11 @@ const LaunchPadImo = () => {
                     </div>
                     <div className="flex flex-col w-[50%] items-end gap-y-1">
                       <p className="font-OCR text-white text-9-10">
-                        {formatRatioToPercentage(item.totalRaisedNumerator, item.totalRaisedDenominator)}/100
+                        {formatRatioToPercentage(item?.totalRaisedNumerator, item?.totalRaisedDenominator)}/100
                       </p>
                       <IProgress
                         className="w-[60%] p-0 h-1 -mt-1"
-                        percent={formatRatioToPercentage(item.totalRaisedNumerator, item.totalRaisedDenominator)}
+                        percent={formatRatioToPercentage(item?.totalRaisedNumerator, item?.totalRaisedDenominator)}
                       />
                     </div>
                   </div>
