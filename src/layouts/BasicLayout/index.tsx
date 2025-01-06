@@ -7,6 +7,7 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { PublicKey } from '@solana/web3.js';
 import useStore from '@/store';
 import Tabbar from '@/components/TabBar';
+import LiveDialog from '@/components/LiveDialog';
 
 interface RouteHandle {
   showTabBar?: boolean;
@@ -57,6 +58,8 @@ const BasicLayout: React.FC = () => {
         <Outlet />
       </div>
       {showTabBar && <Tabbar />}
+
+      <LiveDialog />
     </div>
   );
 };
