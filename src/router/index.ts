@@ -11,7 +11,7 @@ const credit = import.meta.env.VITE_ROUTE_RETURN;
 const collection = import.meta.env.VITE_ROUTE_ME;
 const alerts = import.meta.env.VITE_ROUTE_ME;
 const settings = import.meta.env.VITE_ROUTE_ME;
-const collaborations = import.meta.env.VITE_ROUTE_ME;
+const collaborations = import.meta.env.VITE_ROUTE_COLLABORATIONS;
 
 const routeConfig: RouteObject[] = [
   {
@@ -71,6 +71,11 @@ const routeConfig: RouteObject[] = [
       {
         path: collaborations,
         Component: lazy(() => import('../pages/collaborations')),
+        handle: { showTabBar: false },
+      },
+      {
+        path: `${collaborations}/:id`,
+        Component: lazy(() => import('../pages/collaborations/[id]')),
         handle: { showTabBar: false },
       },
     ],
