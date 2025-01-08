@@ -47,9 +47,7 @@ const Collaborations: FC = () => {
           </li>
         ))}
 
-        <div className="mt-[46px]">
-          <Back content="BACK TO MAIN" />
-        </div>
+        <Back content="BACK TO MAIN" />
       </ul>
     </div>
   );

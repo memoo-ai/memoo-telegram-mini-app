@@ -27,9 +27,14 @@
 }
 
 .collaborations_back {
-  width: 100%;
+  width: calc(100% - 32px);
   height: 72px;
   flex-shrink: 0;
+
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
 
   border-radius: 15px 15px 0px 0px;
   background: linear-gradient(180deg, #b53bff 0%, #3a0070 100%);

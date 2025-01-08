@@ -60,9 +60,7 @@ const CollaborationDetail: FC = () => {
             ))}
           </ul>
 
-          <div className="mt-[46px]">
-            <Back content="BACK TO COLLABS" />
-          </div>
+          <Back content="BACK TO COLLABS" />
         </div>
       )}
     </div>
