@@ -19,6 +19,7 @@ import goIcon from '@/assets/images/landing/go.png';
 import alerts from '@/assets/images/landing/bellicon.svg';
 import collabs from '@/assets/images/landing/collabicon.svg';
 import HoverImage from '@/components/HoverImage';
+import { useCallback } from 'react';
 
 const homePath = import.meta.env.VITE_ROUTE_HOME;
 const earnPath = import.meta.env.VITE_ROUTE_HOME;
@@ -45,6 +46,10 @@ const Landing = () => {
       path: homePath,
     },
   ];
+
+  const onCollabsClick = useCallback(() => {
+    navigate('/collaborations');
+  }, []);
 
   return (
     <div className="landing-page h-screen page_container flex flex-col items-center">
@@ -85,7 +90,9 @@ const Landing = () => {
           <img className="absolute top-[141px] -right-[29px]" src={gold5} alt="" />
         </div>
         <div className="absolute right-0 bottom-[36px] flex flex-col gap-y-2.5 w-12 h-[114px]">
-          <HoverImage imgUrl={collabs} text="COLLABS" />
+          <a className="flex" onClick={onCollabsClick}>
+            <HoverImage imgUrl={collabs} text="COLLABS" />
+          </a>
           <HoverImage imgUrl={alerts} text="ALERTS">
             <span className="absolute top-0 right-0 text-10-10 font-404px text-white flex items-center justify-center h-4 w-4 rounded-[50%] bg-[#F65845] border border-solid border-[#C13A2B]">
               {news > 9 ? '9+' : news}

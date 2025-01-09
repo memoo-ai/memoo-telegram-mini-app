@@ -5,6 +5,8 @@
 @import './reset.scss';
 @import '@/assets/styles/_function.scss';
 
+@import url('https://fonts.cdnfonts.com/css/dk-fat-kitty-kat');
+
 @font-face {
   font-family: 'Montserrat';
   src: url(../fonts//Montserrat-VariableFont_wght.ttf);
@@ -123,25 +125,54 @@
     @apply bg-background text-foreground;
   }
 }
-.page_container{
+.page_container {
   padding: 0 16px;
 }
-.text-stroke{
+.text-stroke {
   // -webkit-text-stroke: 1px #000000;
   // -webkit-text-fill-color: #ffffff;
   text-shadow:
     -1px -1px 0 black,
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
 }
-.page_container_tabbar{
+.page_container_tabbar {
   padding: 0 16px;
 }
-.page_tabbar{
+.page_tabbar {
   padding-bottom: 88px;
 }
-.active-tab{
-  background: linear-gradient(180deg, #07E993 4%, #08B976 100%);
-  border: 1px solid #61FAC0;
+.active-tab {
+  background: linear-gradient(180deg, #07e993 4%, #08b976 100%);
+  border: 1px solid #61fac0;
+}
+
+.common_title {
+  background: url('../images/common/bar_bg_001.png') no-repeat center;
+  background-size: 100% 100%;
+  width: 205px;
+  height: 48px;
+  padding: 12px 15px 12px 14px;
+
+  span,
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    text-align: center;
+    //text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    font-family: 'DK Fat Kitty Kat';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 120% */
+
+    background: linear-gradient(180deg, #ffee86 27.08%, #ffcb21 53.12%, #f58007 79.17%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

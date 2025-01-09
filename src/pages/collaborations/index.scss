@@ -1,0 +1,52 @@
+.collaborations_page {
+  background: url('./assets/bg.jpg') no-repeat center;
+  background-size: cover;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.collaborations_tasks_title {
+  color: #fff;
+  font-family: 'OCR A Extended';
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px; /* 100% */
+  letter-spacing: -0.6px;
+}
+
+.collaborations_tasks_points {
+  color: #fff;
+  text-align: right;
+  font-family: '404px';
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 8px; /* 100% */
+}
+
+.collaborations_back {
+  width: calc(100% - 32px);
+  height: 72px;
+  flex-shrink: 0;
+
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+
+  border-radius: 15px 15px 0px 0px;
+  background: linear-gradient(180deg, #b53bff 0%, #3a0070 100%);
+  box-shadow: 0px -4px 30px 0px #000;
+
+  h3 {
+    color: #d899ff;
+    font-family: '404px';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 11px; /* 110% */
+    margin-left: 16px;
+  }
+}
