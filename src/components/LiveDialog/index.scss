@@ -1,0 +1,37 @@
+.ant-modal.live_dialog {
+  .ant-modal-content {
+    background: linear-gradient(180deg, #1f3b4f 0%, #3b9196 100%);
+    min-height: 441px;
+    border-radius: 15px;
+    padding: 0;
+  }
+}
+
+.ant-checkbox-wrapper.live_dialog_checkbox {
+  display: inline-flex;
+  align-items: center;
+
+  .ant-checkbox {
+    &-inner {
+      width: 19px;
+      height: 19px;
+    }
+
+    &:not(.ant-checkbox-checked) {
+      .ant-checkbox-inner {
+        background: transparent;
+      }
+    }
+  }
+
+  .ant-checkbox + span {
+    color: #fff;
+    text-align: center;
+    font-family: 'OCR A Extended';
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 9px; /* 100% */
+    letter-spacing: -0.45px;
+  }
+}

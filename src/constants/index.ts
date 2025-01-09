@@ -14,3 +14,6 @@ export const EDIT_INFO_STORAGE = 'EDIT_INFO_STORAGE';
 
 // Solana
 export const SOL_DEMO_SPL_USDC = 'Gh9ZwEmdLJ8DscKNTkTqPbNwLNNBjuSzaG9Vp2KGtKJr';
+
+// Local storage keys
+export const LS_KEY_LIVE_DIALOG_DISABLED = 'LIVE_DIALOG_DISABLED';

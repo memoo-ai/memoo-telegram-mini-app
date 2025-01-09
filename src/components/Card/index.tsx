@@ -53,7 +53,7 @@ const Card: FC<CardProps> = ({
           // src={item?.banners?.[0] ?? DefaultBannerBg}
           src={item?.icon ?? DefaultBannerBg}
           onClick={() => {
-            itemClick ? itemClick() : navigate(getActualPath('airdrop', { ticker: item.ticker }));
+            itemClick ? itemClick() : navigate(getActualPath('airdrop', { ticker: item?.ticker }));
           }}
         />
         <div className="absolute top-3 left-5">{statusLeft}</div>
@@ -63,7 +63,7 @@ const Card: FC<CardProps> = ({
             className="w-10 h-10 rounded-[50%] mr-2.5"
             src={item?.icon}
             onClick={() => {
-              itemClick ? itemClick() : navigate(getActualPath('airdrop', { ticker: item.ticker }));
+              itemClick ? itemClick() : navigate(getActualPath('airdrop', { ticker: item?.ticker }));
             }}
           /> */}
           <div className="flex justify-between">
@@ -75,7 +75,7 @@ const Card: FC<CardProps> = ({
                   color={item?.collectionFlag ? '#B53BFF' : '#3D255B'}
                   hoverColor={item?.collectionFlag ? '#B53BFF' : '#3D255B'}
                   onClick={async () => {
-                    await collection(item.ticker, item?.collectionFlag, triggerRefresh, 135);
+                    await collection(item?.ticker, item?.collectionFlag, triggerRefresh, 135);
                   }}
                 />
                 // </Wallet>
@@ -84,7 +84,7 @@ const Card: FC<CardProps> = ({
               {Number(item?.creatorTotalRaisedNumerator ?? 0) > 0 && (
                 <IPopover
                   trigger="hover"
-                  content={`${increasedText(formatRatioToPercentage(item?.creatorTotalRaisedNumerator, item?.creatorTotalRaisedDenominator))}`}
+                  content={`${increasedText(formatRatioToPercentage(item?.creatorTotalRaisedNumerator, item.creatorTotalRaisedDenominator))}`}
                 >
                   <img className="w-7 h-6" src="/create/topupicon.png" />
                 </IPopover>
@@ -109,13 +109,13 @@ const Card: FC<CardProps> = ({
         <div>{header}</div>
       </div> */}
       <h5 className="font-OCR text-lg leading-5 text-[#fff]  px-5 w-full whitespace-nowrap overflow-hidden text-ellipsis mt-12">
-        {item.tokenName}
+        {item?.tokenName}
       </h5>
-      <h5 className="font-OCR text-xs leading-5 text-green px-5">{item.ticker}</h5>
+      <h5 className="font-OCR text-xs leading-5 text-green px-5">{item?.ticker}</h5>
       <div
         className="flex flex-col gap-y-1 mt-2.5"
         onClick={() => {
-          itemClick ? itemClick() : navigate(getActualPath('airdrop', { ticker: item.ticker }));
+          itemClick ? itemClick() : navigate(getActualPath('airdrop', { ticker: item?.ticker }));
         }}
       >
         <div className="flex justify-between items-center px-5 gap-y-1">
@@ -159,9 +159,9 @@ const Card: FC<CardProps> = ({
           </div>
           <div className="flex flex-col w-[50%] h-max items-end">
             <p className="font-OCR text-white text-lg leading-5">
-              {formatRatioToPercentage(item.memooScore, item.totalScore)}
+              {formatRatioToPercentage(item?.memooScore, item?.totalScore)}
             </p>
-            <IProgress className="w-[60%] h-1" percent={formatRatioToPercentage(item.memooScore, item.totalScore)} />
+            <IProgress className="w-[60%] h-1" percent={formatRatioToPercentage(item?.memooScore, item?.totalScore)} />
           </div>
         </div>
         <div className="flex justify-between items-start px-5 mt-2.5">
@@ -171,12 +171,12 @@ const Card: FC<CardProps> = ({
           </div>
           <div className="flex flex-col w-[50%] items-end">
             <p className="font-OCR text-white text-lg leading-5 whitespace-nowrap">
-              {/* {formatRatioToPercentage(item.totalRaisedNumerator, item.totalRaisedDenominator)}/100 {tokenSymbol} */}
-              {item.totalRaisedNumerator}/{item.totalRaisedDenominator} {tokenSymbol}
+              {/* {formatRatioToPercentage(item?.totalRaisedNumerator, item?.totalRaisedDenominator)}/100 {tokenSymbol} */}
+              {item?.totalRaisedNumerator}/{item?.totalRaisedDenominator} {tokenSymbol}
             </p>
             <IProgress
               className="w-[60%] p-0 h-1"
-              percent={formatRatioToPercentage(item.totalRaisedNumerator, item.totalRaisedDenominator)}
+              percent={formatRatioToPercentage(item?.totalRaisedNumerator, item?.totalRaisedDenominator)}
             />
           </div>
         </div>
