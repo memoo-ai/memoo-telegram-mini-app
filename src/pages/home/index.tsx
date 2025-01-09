@@ -4,7 +4,6 @@ import ConnectWallet from '@/components/ConnectWallet';
 import { Button } from 'antd';
 import BackButton from '@/components/BackButton';
 import ITooltip from '@/components/ITooltip';
-import Card from '@/components/Card';
 import { IconArrow } from '@/components/icons';
 import ImoImg from '@/assets/images/home/imo.png';
 import memooGoImg from '@/assets/images/home/memoo-go.png';
@@ -18,6 +17,7 @@ import NewsImg from '@/assets/images/home/news.svg';
 import EndsIn from '@/assets/images/home/endsin.svg';
 import { useEffect, useState } from 'react';
 import { getTrendingToken } from '@/api/token';
+import MobileCard from '@/components/MobileCard';
 
 const landingPath = import.meta.env.VITE_ROUTE_LANDING;
 const airdropPath = import.meta.env.VITE_ROUTE_AIRDROP;
@@ -79,20 +79,29 @@ const Home = () => {
             <div className="flex flex-col gap-y-2.5">
               <HoverImage imgUrl={EndsIn} text="Ends IN" canClick={false} showBg={false} />
               <Countdown
-                className="flex flex-col gap-x-1 font-OCR text-9-10 text-white"
+                className="flex flex-col gap-x-1 font-OCR text-9-10 text-white gap-y-1.5"
                 timefragments=""
                 format={([days, hours, minutes, seconds]) => [
-                  <div key="hours" className="bg-[#000000] px-1">
-                    <time className="font-OCR text-lg leading-5 text-white">{hours}</time>
-                    <span className="font-OCR text-lg leading-5 text-white">h</span>
+                  <div
+                    key="hours"
+                    className="bg-[#000000] px-1 flex justify-end items-center w-[51px] h-[30px] rounded-[5px] pr-2.5"
+                  >
+                    <time className="font-404px text-14-14 text-white">{hours}</time>
+                    <span className="font-404px text-12-16 text-white">h</span>
                   </div>,
-                  <div key="minutes" className="bg-[#000000] px-1">
-                    <time className="font-OCR text-lg leading-5 text-white">{minutes}</time>
-                    <span className="font-OCR text-lg leading-5 text-white">m</span>
+                  <div
+                    key="minutes"
+                    className="bg-[#000000] px-1 flex justify-end items-center w-[51px] h-[30px] rounded-[5px] pr-2.5"
+                  >
+                    <time className="font-404px text-14-14 text-white">{minutes}</time>
+                    <span className="font-404px text-12-16 text-white">m</span>
                   </div>,
-                  <div key="seconds">
-                    <time className="font-OCR text-lg leading-5 text-white">{seconds}</time>
-                    <span className="font-OCR text-lg leading-5 text-white">s</span>
+                  <div
+                    key="seconds"
+                    className="bg-[#000000] px-1 flex justify-end items-center w-[51px] h-[30px] rounded-[5px] pr-2.5"
+                  >
+                    <time className="font-404px text-14-14 text-white">{seconds}</time>
+                    <span className="font-404px text-12-16 text-white">s</span>
                   </div>,
                 ]}
                 instant={Number(trendToken?.endsIn) * 1000}
@@ -104,12 +113,7 @@ const Home = () => {
               />
             </div>
             <div className="card-shadow">
-              <Card item={trendToken} timeType="Countdown" timestamp={trending.endsIn}>
-                <div className="flex items-center justify-center gap-x-2 text-10-10 text-purple">
-                  TOKEN INFO
-                  <IconArrow />
-                </div>
-              </Card>
+              <MobileCard className="w-[196px]" item={trendToken} />
             </div>
             <div className="flex flex-col gap-y-4">
               <HoverImage imgUrl={TaskImg} text="TASKS" />

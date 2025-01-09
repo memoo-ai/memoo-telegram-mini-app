@@ -228,8 +228,8 @@ export const increasedText = (value: number) => {
   return `Creator Increased ${value}% Acquisition`;
 };
 
-export const participantsText = (value: number) => {
-  return `${value}/20 Participants Reached`;
+export const participantsText = (value: number | string, total: number | string) => {
+  return `${Number(value ?? 0)}/${Number(total ?? 0)} Participants Reached`;
 };
 
 export const teamFlag = {

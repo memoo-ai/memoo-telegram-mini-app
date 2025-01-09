@@ -89,11 +89,11 @@ const Card: FC<CardProps> = ({
                   <img className="w-7 h-6" src="/create/topupicon.png" />
                 </IPopover>
               )}
-              {item?.trendingFlag && (
+              {/* {item?.trendingFlag && (
                 <IPopover trigger="hover" content={participantsText(10)}>
                   <img className="w-[21px] h-[23px]" src="/softcapicon.png" />
                 </IPopover>
-              )}
+              )} */}
             </div>
             {/* <div>
               <Level />

@@ -91,64 +91,7 @@ const LaunchPadAirdrop = () => {
         <div className="grid grid-cols-2 gap-4 page_container launchpad_content_mobile">
           {data.map((item) => (
             <div key={item?.ticker}>
-              <MobileCard item={item}>
-                <div className="mr-2">
-                  <div className="flex gap-x-[12px] h-full">
-                    {Number(item?.creatorTotalRaisedNumerator ?? 0) > 0 && (
-                      <IPopover
-                        trigger="hover"
-                        content={`${increasedText(formatRatioToPercentage(item?.creatorTotalRaisedNumerator, item.creatorTotalRaisedDenominator))}`}
-                      >
-                        <img className="icon_topup_mobile" src="/create/topupicon.png" />
-                      </IPopover>
-                    )}
-                  </div>
-                </div>
-                <div className="flex flex-col gap-y-1">
-                  <div className="flex flex-col gap-y-1">
-                    <div className="flex justify-between items-center px-2 gap-y-1 h-7">
-                      <div className="flex items-center w-[50%]">
-                        {/* <span className="font-OCR text-[#7D83B5] text-9-10">IMO Date</span> */}
-                        <img className="w-3 h-3" src="/common/date.svg" alt="" />
-                      </div>
-                      <div className="font-OCR text-white text-9-10">
-                        {item.idoDate ? formatTs(Number(item.idoDate ?? 0)) : ''}
-                      </div>
-                    </div>
-                    <div className="flex justify-between items-start px-2">
-                      <div className="flex items-center w-[50%]">
-                        {/* <span className="font-OCR text-[#7D83B5] text-9-10">Memoo Score</span> */}
-                        <img className="w-3 h-3" src="/common/memoo_score_icon.svg" alt="" />
-                      </div>
-                      <div className="flex flex-col w-[50%] h-max items-end gap-y-1">
-                        <p className="font-OCR text-white text-9-10">
-                          {formatRatioToPercentage(item?.memooScore, item?.totalScore)}/100
-                        </p>
-                        <IProgress
-                          className="w-[60%] memoo_progress_mobile -mt-1"
-                          percent={formatRatioToPercentage(item?.memooScore, item?.totalScore)}
-                        />
-                      </div>
-                    </div>
-                    <div className="flex justify-between items-start px-2">
-                      <div className="flex items-center w-[50%]">
-                        {/* <span className="font-OCR text-[#7D83B5] text-9-10">Participants</span> */}
-                        <img className="w-3.5 h-3" src="/common/total_raised.svg" alt="" />
-                      </div>
-                      <div className="flex flex-col w-[50%] h-max items-end gap-y-1">
-                        <span className="font-OCR text-white text-9-10">{item.participants}</span>
-                        <span className="h-1" />
-                      </div>
-                    </div>
-                  </div>
-                  <Button
-                    className="w-full memoo_button_mobile mt-3 h-6"
-                    onClick={() => navigate(getActualPath('airdrop', { ticker: item?.ticker }))}
-                  >
-                    <span className="font-404px text-10-10">AIRDROP</span>
-                  </Button>
-                </div>
-              </MobileCard>
+              <MobileCard item={item} showTotalRaised={false} />
             </div>
           ))}
         </div>
