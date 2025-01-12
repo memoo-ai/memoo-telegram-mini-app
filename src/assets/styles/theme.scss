@@ -1,0 +1,25 @@
+html[data-theme='light'] {
+  --text-parimary: #fff;
+  --text-secondary: #07e993;
+  --text-tertiary: #a005fe;
+  --dialog-bg-primary: linear-gradient(180deg, #1f3b4f 0%, #3b9196 100%);
+  --link-default: #07e993;
+  --link-hover: #b53bff;
+  --link-press: #aa3bff;
+  --link-disabled: rgb(245, 245, 245);
+  --link-text-default: #a005fe;
+  --link-text-hover: #00ed89;
+  --link-text-press: #00ed89;
+  --link-text-disabled: gray;
+  --link-disabled: rgb(245, 245, 245);
+  --list-item-hover: #07e993;
+  --border-primary: #07e993;
+  --card-primary: #1f3b4f;
+  --link-shadow-default: 0px 4px 7px 0px rgba(0, 0, 0, 0.25);
+  --link-shadow-hover: 0px 4px 7px 0px rgba(0, 0, 0, 0.25);
+  --link-shadow-press: 0px 4px 7px 0px rgba(0, 0, 0, 0.25);
+  --link-shadow-disabled: 0px 4px 7px 0px rgba(245, 245, 245, 0.25);
+}
+
+html[data-theme='dark'] {
+}

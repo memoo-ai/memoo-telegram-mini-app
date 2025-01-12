@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { lazy, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate, useMatches } from 'react-router-dom';
 import styles from './index.module.scss';
 import { useLogin } from '@/hooks/useLogin';
@@ -7,7 +7,8 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { PublicKey } from '@solana/web3.js';
 import useStore from '@/store';
 import Tabbar from '@/components/TabBar';
-import LiveDialog from '@/components/LiveDialog';
+
+const LiveDialog = lazy(() => import('@/components/LiveDialog'));
 
 interface RouteHandle {
   showTabBar?: boolean;

@@ -7,6 +7,7 @@ import autoprefixer from 'autoprefixer';
 import { visualizer } from 'rollup-plugin-visualizer';
 import viteCompression from 'vite-plugin-compression';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
+import { createHtmlPlugin } from 'vite-plugin-html';
 const pathResolve = (path: string): string => resolve(process.cwd(), path);
 
 export default defineConfig({
@@ -60,6 +61,18 @@ export default defineConfig({
     },
     nodePolyfills({
       include: ['crypto'],
+    }),
+    createHtmlPlugin({
+      inject: {
+        tags: [
+          {
+            tag: 'html',
+            attrs: {
+              'data-theme': 'light',
+            },
+          },
+        ],
+      },
     }),
   ],
   build: {

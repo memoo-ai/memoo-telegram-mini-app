@@ -12,7 +12,7 @@
     }
   },
   "extends": ["alloy", "alloy/react", "alloy/typescript", "prettier"],
-  "plugins": ["prettier","react-refresh"],
+  "plugins": ["prettier", "react-refresh"],
   "env": {
     "browser": true
   },
@@ -21,6 +21,7 @@
     "prettier/prettier": "error",
     "no-return-assign": "off",
     "no-unused-vars": "off",
+    "no-debugger": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/consistent-type-imports": "off",
     "react-refresh/only-export-components": "warn"

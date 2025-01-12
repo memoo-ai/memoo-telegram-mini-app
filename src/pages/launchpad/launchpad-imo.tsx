@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 import './launchpad-imo.scss';
-import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef, lazy } from 'react';
 import type { PaginationProps } from 'antd';
 import { Table, Spin, Button } from 'antd';
 import { imoSelectOptions, increasedText } from '@/config';
@@ -19,6 +19,8 @@ import Tabbar from '@/components/TabBar';
 import StickyHeader from '@/components/StickyHeader';
 import ImoImg from '@/assets/images/icons/icon-imo.svg';
 import Select from '@/components/Select';
+
+const ImoBuyDialog = lazy(() => import('./ImoBuyDialog'));
 
 const tokenSymbol = import.meta.env.VITE_TOKEN_SYMBOL;
 const LaunchPadImo = () => {
@@ -104,7 +106,11 @@ const LaunchPadImo = () => {
         <div className="grid grid-cols-2 gap-4 page_container launchpad_content_mobile ">
           {data.map((item) => (
             <div key={item?.ticker}>
-              <MobileCard item={item} />
+              <ImoBuyDialog>
+                <a>
+                  <MobileCard item={item} />
+                </a>
+              </ImoBuyDialog>
             </div>
           ))}
         </div>

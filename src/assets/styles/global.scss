@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import './reset.scss';
+@import './theme.scss';
 @import '@/assets/styles/_function.scss';
 
 @import url('https://fonts.cdnfonts.com/css/dk-fat-kitty-kat');
@@ -174,5 +175,57 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+}
+
+.hidden-scrollbar {
+  overflow: auto; /* 允许滚动 */
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none; /* 隐藏滚动条（Chrome/Safari） */
+}
+
+.hidden-scrollbar {
+  scrollbar-width: none; /* 隐藏滚动条（Firefox） */
+  -ms-overflow-style: none; /* 隐藏滚动条（IE/Edge） */
+}
+
+.common_btn_primary {
+  width: auto;
+  height: auto;
+  flex-shrink: 0;
+  padding: 14px 16px 13px 16px;
+
+  border-radius: 10px;
+  background: var(--link-default);
+  box-shadow: var(--link-shadow-default);
+
+  color: var(--link-text-default);
+  text-align: center;
+  font-family: '404px';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px; /* 100% */
+
+  border: none;
+
+  &:hover {
+    color: var(--link-text-hover) !important;
+    background: var(--link-hover) !important;
+    box-shadow: var(--link-hover-shadow-default) !important;
+  }
+
+  &:active {
+    color: var(--link-text-press) !important;
+    background: var(--link-press) !important;
+    box-shadow: var(--link-press-shadow-default) !important;
+  }
+
+  &:disabled {
+    color: var(--link-text-disabled) !important;
+    background: var(--link-disabled) !important;
+    box-shadow: var(--link-press-shadow-disabled) !important;
   }
 }
