@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 import './launchpad-airdrop.scss';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, lazy } from 'react';
 import type { PaginationProps } from 'antd';
 import { Spin, Button } from 'antd';
 import { increasedText } from '@/config';
@@ -18,6 +18,9 @@ import StickyHeader from '@/components/StickyHeader';
 import AirdropImg from '@/assets/images/icons/icon-airdrop.svg';
 import Select from '@/components/Select';
 import { airdropSelectOptions } from '@/config';
+
+const AirdropTaskDialog = lazy(() => import('./AirdropTaskDialog'));
+
 const LaunchPadAirdrop = () => {
   const navigate = useNavigate();
   const [activeKey, setActiveKey] = useState('');
@@ -91,7 +94,11 @@ const LaunchPadAirdrop = () => {
         <div className="grid grid-cols-2 gap-4 page_container launchpad_content_mobile">
           {data.map((item) => (
             <div key={item?.ticker}>
-              <MobileCard item={item} showTotalRaised={false} />
+              <AirdropTaskDialog hasCreatorFollowed={true}>
+                <a>
+                  <MobileCard item={item} showTotalRaised={false} />
+                </a>
+              </AirdropTaskDialog>
             </div>
           ))}
         </div>

@@ -1,7 +1,7 @@
 .ant-modal.imo_buy_dialog {
   .ant-modal-content {
     background: var(--dialog-bg-primary);
-    min-height: 441px;
+    // min-height: 441px;
     border-radius: 15px;
     padding: 0;
   }
@@ -61,7 +61,7 @@
 }
 
 .imo_buy_dialog_list {
-  width: 296px;
+  // width: 296px;
   max-height: 206px;
   overflow-y: auto;
   flex-shrink: 0;

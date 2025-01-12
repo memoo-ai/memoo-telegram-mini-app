@@ -2,3 +2,4 @@
 
 - LiveDialog
 - Collaborations Process
+- IMO Buy Dialog

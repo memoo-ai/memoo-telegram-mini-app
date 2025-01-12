@@ -1,0 +1,166 @@
+.ant-modal.airdrop_task_dialog {
+  .ant-modal-content {
+    background: var(--dialog-bg-primary);
+    // min-height: 441px;
+    border-radius: 15px;
+    padding: 0;
+  }
+}
+
+.ant-checkbox-wrapper.airdrop_task_dialog_checkbox {
+  display: inline-flex;
+  align-items: center;
+
+  .ant-checkbox {
+    &-inner {
+      width: 19px;
+      height: 19px;
+    }
+
+    &:not(.ant-checkbox-checked) {
+      .ant-checkbox-inner {
+        background: transparent;
+      }
+    }
+  }
+
+  .ant-checkbox + span {
+    color: #fff;
+    text-align: center;
+    font-family: 'OCR A Extended';
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 9px; /* 100% */
+    letter-spacing: -0.45px;
+  }
+}
+
+.airdrop_task_dialog_title {
+  font-family: '404px';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px; /* 100% */
+
+  background: linear-gradient(90deg, #07e993 0%, #14fcfb 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.airdrop_task_dialog_desc {
+  color: #fff;
+  text-align: center;
+  font-family: 'OCR A Extended';
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px; /* 120% */
+  letter-spacing: -0.5px;
+}
+
+.airdrop_task_dialog_list {
+  width: 296px;
+  max-height: 206px;
+  overflow-y: auto;
+  flex-shrink: 0;
+
+  border-radius: 10px;
+  border: 1px solid var(--border-primary);
+  background: #1f3b4f;
+  box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.25);
+}
+
+.airdrop_task_dialog_list_item {
+  height: 40px;
+  padding: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sols,
+.equal-tokens {
+  //color: var(--text-secondary);
+  font-family: '404px';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px; /* 116.667% */
+}
+
+.airdrop_task_dialog_endsin {
+  text-align: center;
+  font-family: '404px';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px; /* 100% */
+
+  background: linear-gradient(90deg, #07e993 0%, #14fcfb 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.airdrop_task_dialog_countdown time {
+  width: 51px;
+  height: 30px;
+  flex-shrink: 0;
+
+  background-color: #1f3b4f;
+  border: 1px solid #07e993;
+  filter: drop-shadow(0px 0px 10px #81f9cc);
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  .value {
+    color: #fff;
+    text-align: right;
+    font-family: '404px';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px; /* 100% */
+  }
+
+  .unit {
+    color: #fff;
+    text-align: center;
+    font-family: '404px';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 10px; /* 100% */
+  }
+}
+
+.airdrop_task_dialog_follows {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.airdrop_task_dialog_follows_item {
+  border-radius: 10px;
+  border: 1px solid #07e993;
+  background: #1f3b4f;
+
+  span {
+    color: #fff;
+    font-family: 'OCR A Extended';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 9px; /* 75% */
+    letter-spacing: -0.6px;
+  }
+
+  img {
+    width: 34px;
+  }
+}

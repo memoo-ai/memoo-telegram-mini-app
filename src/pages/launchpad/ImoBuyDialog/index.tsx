@@ -40,7 +40,7 @@ function ImoBuyDialog({ children, onConfirm }: ImoBuyDialogProps): JSX.Element {
         return child;
       })}
       <Modal className="imo_buy_dialog" title={null} open={opened} footer={null} closable={false}>
-        <div className="imo_buy_dialog_head w-full relative">
+        <div className="imo_buy_dialog_head px-[16px] w-full relative">
           <img
             className="imo_buy_dialog_head_close w-[60px] absolute top-[0] right-[16px] object-contain translate-y-[-44%] cursor-pointer"
             src={CloseIcon}
@@ -60,8 +60,8 @@ function ImoBuyDialog({ children, onConfirm }: ImoBuyDialogProps): JSX.Element {
             Total IMO raise is always capped at 66.6 SOL. Contribution capped at 0.9 SOL per wallet.
           </p>
         </div>
-        <div className="imo_buy_dialog_body pt-[24px] px-[6.5px] pb-[11px] flex flex-col items-center">
-          <ul className="imo_buy_dialog_list hidden-scrollbar px-[3px]">
+        <div className="imo_buy_dialog_body pt-[24px] px-[16px] pb-[11px] flex flex-col items-center">
+          <ul className="imo_buy_dialog_list w-full hidden-scrollbar px-[3px]">
             {new Array(10).fill('').map((Item, index) => (
               <li
                 className="imo_buy_dialog_list_item text-[var(--text-secondary)] hover:bg-[var(--list-item-hover)] hover:text-[var(--text-tertiary)] rounded-[7px]"
@@ -79,7 +79,7 @@ function ImoBuyDialog({ children, onConfirm }: ImoBuyDialogProps): JSX.Element {
             </Checkbox>
           </div>
 
-          <div className="px-[16px] w-full">
+          <div className="w-full">
             <Button onClick={onConfirmClick} disabled={!checked} className="common_btn_primary !w-full">
               CONFIRM
             </Button>
