@@ -4,7 +4,7 @@ import './index.scss';
 import StickyHeader from '@/components/StickyHeader';
 import Select from '@/components/Select';
 import { meSelectOptions } from '@/config';
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import HoverImage from '@/components/HoverImage';
 import { ReferralType } from '@/types';
 import { getUserReferral } from '@/api/join';
@@ -96,6 +96,11 @@ const Mine = () => {
       path: returnPath,
     },
   ];
+
+  const onAlertsClick = useCallback(() => {
+    navigate(`/alerts`);
+  }, []);
+
   return (
     <div className="page_tabbar">
       <StickyHeader text="Account" imgSrc={MeImg}>
@@ -110,11 +115,13 @@ const Mine = () => {
         <div className=" mine-icons w-full pt-3 px-4 pb-2 rounded-[15px] relative">
           <div className="flex items-center gap-x-4">
             <HoverImage imgUrl={SettingImg} showBg={false} />
-            <HoverImage imgUrl={alerts} text="ALERTS">
-              <span className="absolute top-0 right-0 text-10-10 font-404px text-white flex items-center justify-center h-4 w-4 rounded-[50%] bg-[#F65845] border border-solid border-[#C13A2B]">
-                9+
-              </span>
-            </HoverImage>
+            <a onClick={onAlertsClick}>
+              <HoverImage imgUrl={alerts} text="ALERTS">
+                <span className="absolute top-0 right-0 text-10-10 font-404px text-white flex items-center justify-center h-4 w-4 rounded-[50%] bg-[#F65845] border border-solid border-[#C13A2B]">
+                  9+
+                </span>
+              </HoverImage>
+            </a>
             <HoverImage imgUrl={TaskImg} text="TASKS" />
             <HoverImage imgUrl={BellImg} text={`INVITE\nFRIENDs`} />
           </div>

@@ -1,0 +1,36 @@
+.alerts_page {
+  background: url('./assets/bg.jpg') no-repeat center;
+  background-size: cover;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.alerts_tasks_title {
+  color: #fff;
+  font-family: 'OCR A Extended';
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px; /* 100% */
+  letter-spacing: -0.6px;
+}
+
+.alerts_tasks_points {
+  color: #fff;
+  text-align: right;
+  font-family: '404px';
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 8px; /* 100% */
+}
+
+.alerts_updated {
+  color: #fff;
+  font-family: '404px';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px; /* 100% */
+}

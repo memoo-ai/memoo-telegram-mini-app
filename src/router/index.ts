@@ -9,8 +9,8 @@ const imo = import.meta.env.VITE_ROUTE_IMO;
 const me = import.meta.env.VITE_ROUTE_ME;
 const credit = import.meta.env.VITE_ROUTE_RETURN;
 const collection = import.meta.env.VITE_ROUTE_ME;
-const alerts = import.meta.env.VITE_ROUTE_ME;
-const settings = import.meta.env.VITE_ROUTE_ME;
+const alerts = import.meta.env.VITE_ROUTE_ALERTS;
+const settings = import.meta.env.VITE_ROUTE_SETTINGS;
 const collaborations = import.meta.env.VITE_ROUTE_COLLABORATIONS;
 
 const routeConfig: RouteObject[] = [
