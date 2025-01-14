@@ -2,7 +2,7 @@ import BackButton from '@/components/BackButton';
 
 function Back({ content }: { content?: string }): JSX.Element {
   return (
-    <div className="common_back_bottom_bar mx-[auto]">
+    <div className="common_back_bottom_bar !w-full mx-[auto]">
       <div className="ml-[15px] translate-y-[-50%]">
         <BackButton />
       </div>

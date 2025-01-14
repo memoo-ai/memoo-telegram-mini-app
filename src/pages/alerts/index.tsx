@@ -2,9 +2,11 @@ import './index.scss';
 import ConnectWallet from '@/components/ConnectWallet';
 import BellIcon from './assets/bell.png';
 import pendantImage2 from './assets/pendant_002.png';
+import StaticBarImage from './assets/static_bar.png';
 import { FC, useCallback } from 'react';
 import Back from './back';
 import { useNavigate } from 'react-router-dom';
+import classNames from 'classnames';
 
 const Alerts: FC = () => {
   const navigate = useNavigate();
@@ -15,7 +17,7 @@ const Alerts: FC = () => {
 
   return (
     <div className="alerts_page">
-      <div className="alerts_head mx-[16px] mb-[16px] relative">
+      <div className="alerts_head sticky top-[0] relative z-[1] px-[16px] pb-[16px] relative">
         <div className="pt-[13px]">
           <ConnectWallet />
         </div>
@@ -32,12 +34,26 @@ const Alerts: FC = () => {
 
         <img className="w-[calc(141px/3)] object-contain absolute top-0 left-[50%] translate-x-[-50%]" src={BellIcon} />
 
-        <a className="flex absolute right-0 top-[10px]" onClick={onSwitchToGameClick}>
+        <a className="flex absolute right-[16px] top-[10px]" onClick={onSwitchToGameClick}>
           <img className="w-[51px] object-contain" src={pendantImage2} />
         </a>
+
+        <img className="w-full object-contain mt-[4px]" src={StaticBarImage} />
       </div>
 
       {/* TODO */}
+      <ul className="alerts_list flex flex-col gap-y-[10px]">
+        {new Array(10).fill(0).map((_, index) => (
+          <li
+            key={index}
+            className={classNames('alerts_list_item', { read: index % 2 === 0, unread: index % 2 === 1 })}
+          >
+            <h4>⚡ Join now and secure your IMO spot! </h4>
+            <p>Participate in the XXXXXXXX IMO. Don’t miss out on this exciting token!</p>
+            <time>Now</time>
+          </li>
+        ))}
+      </ul>
 
       <Back content="BACK TO MAIN" />
     </div>
