@@ -97,6 +97,10 @@ const Mine = () => {
     },
   ];
 
+  const onSettingsClick = useCallback(() => {
+    navigate(`/settings`);
+  }, []);
+
   const onAlertsClick = useCallback(() => {
     navigate(`/alerts`);
   }, []);
@@ -114,7 +118,9 @@ const Mine = () => {
       <div className="mine-content page_container">
         <div className=" mine-icons w-full pt-3 px-4 pb-2 rounded-[15px] relative">
           <div className="flex items-center gap-x-4">
-            <HoverImage imgUrl={SettingImg} showBg={false} />
+            <a onClick={onSettingsClick}>
+              <HoverImage imgUrl={SettingImg} showBg={false} />
+            </a>
             <a onClick={onAlertsClick}>
               <HoverImage imgUrl={alerts} text="ALERTS">
                 <span className="absolute top-0 right-0 text-10-10 font-404px text-white flex items-center justify-center h-4 w-4 rounded-[50%] bg-[#F65845] border border-solid border-[#C13A2B]">
