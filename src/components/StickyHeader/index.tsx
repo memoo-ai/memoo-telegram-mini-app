@@ -5,6 +5,7 @@ import ITooltip from '../ITooltip';
 import './index.scss';
 
 import SwitchGame from '@/assets/images/icons/switch-game.svg';
+import BounsPointsClaimedDialog from '../BounsPointsClaimedDialog';
 
 interface StickyHeaderProps {
   text: string;
@@ -34,7 +35,9 @@ const StickyHeader = ({ text, imgSrc, children, ...rest }: StickyHeaderProps) =>
           <img className=" absolute -top-9 left-1/2 -translate-x-1/2" src={imgSrc} alt="" />
         </div>
         <div className="absolute top-3 right-4">
-          <HoverImage imgUrl={SwitchGame} text={`SWITCH TO\nGAME`} />
+          <BounsPointsClaimedDialog>
+            <HoverImage imgUrl={SwitchGame} text={`SWITCH TO\nGAME`} />
+          </BounsPointsClaimedDialog>
         </div>
         <div>{children}</div>
       </div>

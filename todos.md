@@ -7,3 +7,4 @@
 - Settings
 - Alerts
 - ConnectProcessDialog
+- BounsPointsClaimedDialog
