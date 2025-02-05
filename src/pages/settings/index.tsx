@@ -3,15 +3,32 @@ import ConnectWallet from '@/components/ConnectWallet';
 import BellIcon from './assets/bell.png';
 import pendantImage2 from './assets/pendant_002.png';
 import StaticBarImage from './assets/static_bar.png';
-import { FC, useCallback } from 'react';
+import { FC, useCallback, useMemo } from 'react';
 import Back from './back';
 import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames';
+import { Switch } from 'antd';
 
 const Settings: FC = () => {
   const navigate = useNavigate();
 
+  const settingItems = useMemo(
+    () => [
+      { title: 'Status of tokens in collection', checked: false },
+      { title: 'Latest airdrops and IMOs', checked: false },
+      { title: 'News and updates', checked: true },
+      { title: 'Collaboration events', checked: false },
+      { title: 'New daily check-in tasks', checked: false },
+      { title: 'When new friends have joined', checked: false },
+    ],
+    [],
+  );
+
   const onSwitchToGameClick = useCallback(() => {
+    // TODO
+  }, []);
+
+  const onToggleChange = useCallback(() => {
     // TODO
   }, []);
 
@@ -43,14 +60,11 @@ const Settings: FC = () => {
 
       {/* TODO */}
       <ul className="settings_list flex flex-col gap-y-[10px]">
-        {new Array(10).fill(0).map((_, index) => (
-          <li
-            key={index}
-            className={classNames('settings_list_item', { read: index % 2 === 0, unread: index % 2 === 1 })}
-          >
-            <h4>⚡ Join now and secure your IMO spot! </h4>
-            <p>Participate in the XXXXXXXX IMO. Don’t miss out on this exciting token!</p>
-            <time>Now</time>
+        {settingItems.map(({ title, checked }, index) => (
+          <li key={index} className={classNames('settings_list_item')}>
+            <h4>{title}</h4>
+
+            <Switch checked={checked} className="settings_switch ml-[auto]" onChange={onToggleChange} />
           </li>
         ))}
       </ul>

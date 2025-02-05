@@ -47,8 +47,9 @@
 .settings_list_item {
   border-radius: 15px;
   background: #181828;
-
-  padding: 12px 45px 6px 11px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
 
   h4 {
     color: #fff;
@@ -57,58 +58,33 @@
     font-style: normal;
     font-weight: 400;
     line-height: 12px; /* 100% */
+    letter-spacing: -0.6px;
   }
 
-  p {
-    color: #fff;
-    font-family: 'OCR A Extended';
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 12px;
-    letter-spacing: -0.5px;
+  border-radius: 15px;
+  border: 1px solid #b53bff;
+  background: #2c1844;
+}
+
+.settings_switch.ant-switch {
+  height: 30px;
+  width: 54px;
+  background: linear-gradient(to bottom, #560f81, #a005fe) !important;
+
+  border: 1px solid #ffffff;
+
+  .ant-switch-handle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    overflow: hidden;
   }
 
-  time {
-    color: #7d83b5;
-    font-family: 'OCR A Extended';
-    font-size: 9px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 9px; /* 100% */
-    letter-spacing: -0.45px;
+  &.ant-switch-checked .ant-switch-handle {
+    inset-inline-start: calc(100% - 28px);
   }
 
-  &.read {
-    border: 1px solid var(--msg-read);
-    position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      right: 13px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 10px;
-      height: 10px;
-      background: url('./assets/msg_read.svg') no-repeat center;
-      background-size: contain;
-    }
-  }
-  &.unread {
-    border: 1px solid var(--msg-unread);
-    position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      right: 13px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 10px;
-      height: 10px;
-      background: url('./assets/msg_unread.svg') no-repeat center;
-      background-size: contain;
-    }
+  &.ant-switch-checked {
+    background: linear-gradient(to bottom, #0e6443, #07e993) !important;
   }
 }

@@ -68,7 +68,7 @@ const MobileCard: FC<MobileCardProps> = ({ item, showTotalRaised = true, itemCli
               <img className="w-3 h-3" src={DateIcon} alt="" />
             </div>
             <div className="font-OCR text-white text-9-10">
-              {item.idoDate ? formatTs(Number(item.idoDate ?? 0)) : ''}
+              {item?.idoDate ? formatTs(Number(item.idoDate ?? 0)) : ''}
             </div>
           </div>
           <div className="flex justify-between items-start px-1.5">
