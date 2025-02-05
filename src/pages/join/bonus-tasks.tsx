@@ -8,7 +8,7 @@ import {
   IconTwitter,
   IconUser,
 } from '@/components/icons';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { lazy, useEffect, useMemo, useRef, useState } from 'react';
 import './bonus-tasks.scss';
 import { Spin } from 'antd';
 import { useAccount } from '@/hooks/useWeb3';
@@ -16,6 +16,8 @@ import { getUserTask } from '@/api/join';
 import TaskModal from './task-modal';
 import isMobile from 'is-mobile';
 import CompletedIcon from '@/assets/images/join/completed.svg';
+
+const ConnectProcessDialog = lazy(() => import('./ConnectProcessDialog'));
 
 interface Task {
   manual: boolean;
@@ -261,47 +263,49 @@ const BonusTasks = () => {
                 onVerify={() => setRefresh((r) => r + 1)}
                 className="w-full"
               >
-                <div
-                  className={`w-full flex items-center justify-between font-OCR max-lg:text-9-9 text-[18px] leading-[18px] border border-solid rounded-[7px] bonus p-2.5 ${item.taskFinish ? 'bg-[#1F1131] border-[#623D8F] text-[#623D8F]' : 'bg-[#2C1844] border-[#B53BFF] text-white hover:bg-[#B53BFF]'} ${item.manual && 'cursor-pointer'}`}
-                  onMouseOver={() => {
-                    if (!item?.taskFinish) {
-                      iconRefs.current[item.taskCode].setHovered(true);
-                    }
-                  }}
-                  onMouseLeave={() => {
-                    if (!item?.taskFinish) {
-                      iconRefs.current[item.taskCode].setHovered(false);
-                    }
-                  }}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (!item?.taskFinish && !item?.manual) {
-                      return true;
-                    }
-                  }}
-                >
-                  <div className="flex items-center gap-x-5">
-                    {item?.taskFinish ? (
-                      <div className="w-8 h-8 max-lg:w-6 max-lg:h-6 completed-icon rounded-[8px]">
-                        <img className="w-8 h-8 max-lg:w-6 max-lg:h-6 " src={CompletedIcon} />
-                        {/* <IconCompleted /> */}
-                      </div>
-                    ) : (
-                      <div
-                        className={`w-8 h-8 max-lg:w-6 max-lg:h-6 max-lg:rounded-[4px] rounded-[7px] flex justify-center items-center border border-solid border-[#B53BFF] ${item?.taskFinish ? 'bg-[#B53BFF]' : 'bg-[#2C1844] bonus-item'}`}
-                      >
-                        {item.icon}
-                      </div>
-                    )}
-                    <span>
-                      {`${index >= 9 ? '' : 0}${index + 1}`} / {item?.taskName}
-                    </span>
-                  </div>
+                <ConnectProcessDialog data={item} serialNo={`${index >= 9 ? '' : 0}${index + 1}`}>
+                  <div
+                    className={`w-full flex items-center justify-between font-OCR max-lg:text-9-9 text-[18px] leading-[18px] border border-solid rounded-[7px] bonus p-2.5 ${item.taskFinish ? 'bg-[#1F1131] border-[#623D8F] text-[#623D8F]' : 'bg-[#2C1844] border-[#B53BFF] text-white hover:bg-[#B53BFF]'} ${item.manual && 'cursor-pointer'}`}
+                    onMouseOver={() => {
+                      if (!item?.taskFinish) {
+                        iconRefs.current[item.taskCode].setHovered(true);
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      if (!item?.taskFinish) {
+                        iconRefs.current[item.taskCode].setHovered(false);
+                      }
+                    }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (!item?.taskFinish && !item?.manual) {
+                        return true;
+                      }
+                    }}
+                  >
+                    <div className="flex items-center gap-x-5">
+                      {item?.taskFinish ? (
+                        <div className="w-8 h-8 max-lg:w-6 max-lg:h-6 completed-icon rounded-[8px]">
+                          <img className="w-8 h-8 max-lg:w-6 max-lg:h-6 " src={CompletedIcon} />
+                          {/* <IconCompleted /> */}
+                        </div>
+                      ) : (
+                        <div
+                          className={`w-8 h-8 max-lg:w-6 max-lg:h-6 max-lg:rounded-[4px] rounded-[7px] flex justify-center items-center border border-solid border-[#B53BFF] ${item?.taskFinish ? 'bg-[#B53BFF]' : 'bg-[#2C1844] bonus-item'}`}
+                        >
+                          {item.icon}
+                        </div>
+                      )}
+                      <span>
+                        {`${index >= 9 ? '' : 0}${index + 1}`} / {item?.taskName}
+                      </span>
+                    </div>
 
-                  <var className={`${!isMobile() && 'points-btn'} px-0.5 py-1 max-lg:font-404px max-lg:text-8-8`}>
-                    {item?.taskScore} points
-                  </var>
-                </div>
+                    <var className={`${!isMobile() && 'points-btn'} px-0.5 py-1 max-lg:font-404px max-lg:text-8-8`}>
+                      {item?.taskScore} points
+                    </var>
+                  </div>
+                </ConnectProcessDialog>
               </TaskModal>
             );
           })}

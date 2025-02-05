@@ -1,0 +1,75 @@
+.ant-modal.connect_process_dialog {
+  .ant-modal-content {
+    background: var(--dialog-bg-primary);
+    min-height: 264px;
+    border-radius: 15px;
+    padding: 0;
+  }
+}
+
+.connect_process_dialog_title {
+  font-family: '404px';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px; /* 100% */
+
+  background: linear-gradient(90deg, #07e993 0%, #14fcfb 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.connect_process_dialog_desc {
+  color: #fff;
+  text-align: center;
+  font-family: 'OCR A Extended';
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px; /* 120% */
+  letter-spacing: -0.5px;
+}
+
+.connect_process_dialog_text {
+  color: #fff;
+  font-family: 'OCR A Extended';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px; /* 100% */
+  letter-spacing: -0.6px;
+}
+
+.connect_process_dialog_per_step {
+  > div {
+    width: 84px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2b526f;
+    border: 1px solid var(--border-primary);
+    border-radius: 7px;
+
+    color: #fff;
+    text-align: center;
+    font-family: 404px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px; /* 100% */
+  }
+
+  > .ant-btn {
+    @apply h-[35px] flex-[1];
+
+    color: #1f3b4f;
+    text-align: center;
+    font-family: 404px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px; /* 100% */
+  }
+}

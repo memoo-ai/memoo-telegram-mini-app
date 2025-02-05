@@ -6,3 +6,4 @@
 - Airdrop Task Dialog
 - Settings
 - Alerts
+- ConnectProcessDialog
